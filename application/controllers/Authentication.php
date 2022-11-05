@@ -28,7 +28,7 @@ class Authentication extends CI_Controller {
 		session_start();
 
 		//membuat koneksi ke database
-		$mysqli = new mysqli("localhost","root","","pendataan");
+		$mysqli = new mysqli("localhost","root","mysql","db_app_naya_01");
 
 		 //validasi koneksi jika ada koneksi database
 		if ($mysqli -> connect_errno) {

@@ -44,7 +44,7 @@ class BarangManage extends CI_Controller {
 	public function tambahbarang()
 	{
 		// koneksi database
-		    $mysqli = new mysqli("localhost","root","","pendataan");
+		    $mysqli = new mysqli("localhost","root","mysql","db_app_naya_01");
 
 		// validasi database
 		if ($mysqli -> connect_errno) {
@@ -83,7 +83,7 @@ class BarangManage extends CI_Controller {
 	public function tambahdatamasuk()
 	{
 		// koneksi database
-		    $mysqli = new mysqli("localhost","root","","pendataan");
+		    $mysqli = new mysqli("localhost","root","mysql","db_app_naya_01");
 
 		// validasi database
 		if ($mysqli -> connect_errno) {
@@ -137,7 +137,7 @@ class BarangManage extends CI_Controller {
 	public function tambahdatakeluar()
 	{
 		// koneksi database
-		    $mysqli = new mysqli("localhost","root","","pendataan");
+		    $mysqli = new mysqli("localhost","root","mysql","db_app_naya_01");
 
 		// validasi database
 		if ($mysqli -> connect_errno) {
