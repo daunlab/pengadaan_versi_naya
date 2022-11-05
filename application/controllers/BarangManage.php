@@ -87,42 +87,33 @@ class BarangManage extends CI_Controller {
         // variabel form tambah barang
 		$variable = $this->input->post();
 		$id_masuk = $variable["id_masuk"];
+		$id_barang = $variable["id_barang"];
 		$nama_barang = $variable["nama_barang"];
 		$jumlah = $variable["jumlah"];
 		$harga= $variable["harga"];
 		$tanggal = $variable["tanggal"];
+		
+		$data = array(
+			'id_masuk' => $id_masuk,
+			'id_barang' => $id_barang,
+			'nama_barang' => $nama_barang,
+			'jumlah' => $jumlah,
+			'harga' => $harga,
+			'tanggal' => $tanggal,
+		);
 
-		// query insert ke table  
-		$sql = "
-		INSERT INTO
-		`masuk`(
-		  `id_masuk`,
-		  `nama_barang`,
-		  `jumlah`,
-		  `harga`,
-		  `tanggal`
-		)
-	  VALUES
-		(
-		  '$id_masuk',
-		  '$nama_barang',
-		  '$jumlah',
-		  '$harga',
-		  '$tanggal'
-		)";	  
-
-		// kirim ke database
-		if ($mysqli->query($sql) === TRUE) { 
-			echo "New record created successfully";
+		$statusinsert = $this->m_masuk->input_data($data, 'masuk');
+		
+		if($statusinsert) {
+			/**
+			 * todo add, conditional if success insert
+			 */
 			header('location:masuk-barang');
-		  } else {
-			echo "Error: " . $sql . "<br>" . $mysqli->error;
-		  }
-		  
-		  $mysqli->close();
-		  
-
-		// daftar barang
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
 
 
 	}
@@ -148,21 +139,27 @@ class BarangManage extends CI_Controller {
 		$tanggal = $variable["tanggal"];
 
 		// query insert ke table  
-		$sql = " INSERT INTO `keluar`(`id_keluar`, `id_barang`, `nama_barang`, `jumlah`, `harga`, `tanggal`) VALUES ('$id_keluar','$id_barang','$nama_barang','$jumlah','$harga','$tanggal')";
+		$data = array(
+			'id_keluar' => $id_keluar,
+			'id_barang' => $id_barang,
+			'nama_barang' => $nama_barang,
+			'jumlah' => $jumlah,
+			'harga' => $harga,
+			'tanggal' => $tanggal,
+		);
 
-		// kirim ke database
-		if ($mysqli->query($sql) === TRUE) { 
-			echo "created successfully";
+		$statusinsert = $this->m_keluar->input_data($data, 'keluar');
+		
+		if($statusinsert) {
+			/**
+			 * todo add, conditional if success insert
+			 */
 			header('location:keluar-barang');
-		  } else {
-			echo "Error: " . $sql . "<br>" . $mysqli->error;
-		  }
-		  
-		  $mysqli->close();
-		  
-
-		// daftar barang
-
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
 
 	}
 	

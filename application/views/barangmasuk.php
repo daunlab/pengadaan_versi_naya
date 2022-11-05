@@ -47,11 +47,11 @@
                                     <thead>
                                         <tr>
                                             <th>ID Masuk</th>
+                                            <th>ID Barang</th>
                                             <th>Nama barang</th>
                                             <th>Jumlah </th>
                                             <th>Harga </th>
                                             <th>Tanggal </th>
-                                            <th>stok</th>
                                             <th class="text-center">aksi</th>
                                         </tr>
                                     </thead>
@@ -59,11 +59,11 @@
                                     <?php foreach ($masuk as $i) { ?>
                                         <tr>
                                             <td><?= $i->id_masuk  ?></td>
+                                            <td><?= $i->id_barang ?></td>
                                             <td><?= $i->nama_barang ?></td>
                                             <td><?= $i->jumlah ?></td>
                                             <th><?= $i->harga ?></th>
                                             <th><?= $i->tanggal ?></th>
-                                            <td><?= $i->stok?></td>
                                             <td class="text-center">
                                                 <a href="" class="btn btn-warning btn-sm">Hapus</a>
                                                 <a href="<?php echo site_url('barangManage/edit'). $i->id_masuk ?>" class="btn btn-danger btn-sm">Edit</a>
@@ -92,6 +92,8 @@
                     <form method="post" action="<?php echo base_url("index.php/hitinsertbrgmasuk")?>">
                     <div class="modal-body">
                     <input type="text" name="id_masuk" placeholder="id_masuk" class="form-control">
+                    <br/>
+                    <input type="text" name="id_barang" placeholder="id_barang" class="form-control">
                     <br>
                     <input type="text" name="nama_barang" placeholder="nama_barang" class="form-control">
                     <br>

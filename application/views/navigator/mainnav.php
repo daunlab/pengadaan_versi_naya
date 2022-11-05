@@ -6,7 +6,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">                            
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="<?php echo base_url('index.php/dashboard1');?>">
+                            <a class="nav-link" href="<?php echo base_url('index.php/dashboard');?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Dashboard
                             </a>

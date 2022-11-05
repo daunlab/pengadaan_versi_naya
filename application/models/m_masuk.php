@@ -4,7 +4,20 @@ class M_masuk extends CI_Model{
 		return $this->db->get('masuk'); 
 	} 
 	function input_data($data,$table){ 
-		$this->db->insert($table,$data); 
+	
+		/**
+		 * validate ID Barang
+		 */
+		
+		/**
+		 * validate stok
+		 */
+		
+		/**
+		 * 
+		 */
+		
+		return $this->db->insert($table,$data); 
 	} 
 	function hapus_data($where,$table){ 
 		$this->db->where($where); 

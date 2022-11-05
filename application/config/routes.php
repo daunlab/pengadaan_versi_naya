@@ -60,6 +60,8 @@ $route['hitinsertbrg'] = 'barangmanage/tambahbarang';
 $route['hitinsertbrgmasuk'] ='barangmanage/tambahdatamasuk/';
 $route['hitinsertbrgkeluar'] ='barangmanage/tambahdatakeluar/';
 $route['hitlaporan'] ='barangmanage';
+
+$route['dashboard'] = 'dashboard';
 $route['hitdashboard'] ='barangmanage';
 
 $route['login'] = 'authentication';
