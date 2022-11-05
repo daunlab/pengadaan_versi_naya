@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menghubungkan codeigniter dengan database mysql</title>
+</head>
+<body>
+	<h1>Data Husbuu</h1>
+	<p><a href="Tambah">(+) Tambah Data</a></p>
+	<table border="1">
+		<tr>
+			<th>ID Barang</th>
+			<th>Nama Barang</th>
+			<th>Harga</th>
+			<th>atok</th>
+			<th>Aksi</th>
+		</tr>
+		<?php foreach ($husbuu as $h) { ?>
+		<tr>
+			<td><?php echo $h->idbarang ?></td>
+			<td><?php echo $h->namabarang ?></td>
+			<td><?php echo $h->harga ?></td>
+			<td><?php echo $h->stok ?></td>
+			<td colspan="2">
+				<?php echo anchor('data_husbuu/hapus/'.$h->nisn,'Hapus'); ?> |
+				<?php echo anchor('data_husbuu/edit/'.$h->nisn, 'Edit'); ?>
+			</td>
+		</tr>
+	<?php } ?>
+	</table>
+</center>
+</body>
+</html>

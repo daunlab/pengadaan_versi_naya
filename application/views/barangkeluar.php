@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard - DeranKusen</title>
+        <?php include "navigator/topscript.php"; ?>
+    </head>
+    <body class="sb-nav-fixed">
+        
+        <!-- start top nav -->
+
+        <?php include "navigator/topnav.php"; ?>
+
+        <!-- end top nav -->
+
+        <div id="layoutSidenav">
+            
+            <!-- start navigator -->
+                <?php include "navigator/mainnav.php"; ?>
+            <!-- send navigator -->
+
+
+            <div id="layoutSidenav_content">
+                <main>
+                    
+                    <!-- the content -->
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Daftar Barang Keluar</h1>
+                         <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">- Barang Yang Terjual</li>
+                        </ol>
+                            
+                        <div class="card mb-4">
+                            <div class="card-header">
+                            <div class="container">
+                            <div class="container mt-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                            Update Barang Keluar
+                            </button>
+                        </div>
+                        <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Keluar </th>
+                                            <th>ID barang</th>
+                                            <th>Nama barang</th>
+                                            <th>Jumlah </th>
+                                            <th>Harga </th>
+                                            <th>Tanggal </th>                     
+                                            <th class="text-center">aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach ($keluar as $i) { ?>
+                                        <tr>
+                                            <td><?= $i->id_keluar ?></td>
+                                            <td><?= $i->id_barang ?></td>
+                                            <td><?= $i->nama_barang ?></td>
+                                            <td><?= $i->jumlah?></td>
+                                            <td><?= $i->harga ?></td>
+                                            <th><?= $i->tanggal ?></th>
+                                            <td class="text-center">
+                                            <p class="d-inline btn btn-danger btn-sm text-dark" style="text-decoration: none;"><?php echo anchor('barangManage/edit/'.$i->id_keluar,'Edit'); ?></p>                                                
+                                                <p class="d-inline btn btn-warning btn-sm text-dark" style="text-decoration: none;"><?php echo anchor('barangManage/hapus/'.$i->id_keluar,'hapus'); ?></p>
+                                        </tr>
+                                        <?php } ?>
+                                        <tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Tambah Barang</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <form method="post" action="<?php echo base_url("index.php/hitinsertbrgkeluar")?>">
+                    <div class="modal-body">
+                    <input type="text" name="id_keluar" placeholder="id_keluar" class="form-control">
+                    <br>
+                    <input type="text" name="id_barang" placeholder="id_barang" class="form-control">
+                    <br>
+                    <input type="text" name="nama_barang" placeholder="nama_barang" class="form-control">
+                    <br>
+                    <input type="text" name="jumlah" placeholder="jumlah" class="form-control">
+                    <br>
+                    <input type="text" name="harga" placeholder="harga" class="form-control">
+                    <br>
+                    <input type="text" name="tanggal" placeholder="tanggal" class="form-control">
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="addnewbarang">submit</button>
+                    </div>
+                    </form>
+
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <?php include "pages/footer.php" ?>
+                </footer>
+            </div>
+        </div>
+        
+        <?php include "navigator/bottomscript.php" ?>
+
+    </body>
+</html>
