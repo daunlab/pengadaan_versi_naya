@@ -4,7 +4,7 @@ class M_barang extends CI_Model{
 		return $this->db->get('barang'); 
 	} 
 	function input_data($data,$table){ 
-		$this->db->insert($table,$data); 
+		return $this->db->insert($table,$data); 
 	} 
 	function hapus_data($where,$table){ 
 		$this->db->where($where); 

@@ -43,40 +43,32 @@ class BarangManage extends CI_Controller {
 	}
 	public function tambahbarang()
 	{
-		// koneksi database
-		    $mysqli = new mysqli("localhost","root","mysql","db_app_naya_01");
-
-		// validasi database
-		if ($mysqli -> connect_errno) {
-			echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-			exit();
-		}
-
-		// query insert
-        // variabel form tambah barang
+	
 		$variable = $this->input->post();
 		$idbarang = $variable["idbarang"];
 		$namabarang = $variable["namabarang"];
 		$harga= $variable["harga"];
 		$stok= $variable["stok"];
-
-		// query insert ke table  
-		$sql = "INSERT INTO `barang`(`idbarang`, `namabarang`, `harga`, `stok`) VALUES ('$idbarang','$namabarang','$harga','$stok')";
-
-
-		// kirim ke database
-		if ($mysqli->query($sql) === TRUE) { 
-			echo "New record created successfully";
+		
+		$data = array(
+			'idbarang' => $idbarang,
+			'namabarang' => $namabarang,
+			'harga' => $harga,
+			'stok' => $stok,
+		);
+		
+		$statusinsert = $this->m_barang->input_data($data, 'barang');
+		
+		if($statusinsert) {
+			/**
+			 * todo add, conditional if success insert
+			 */
 			header('location:barang');
-		  } else {
-			echo "Error: " . $sql . "<br>" . $mysqli->error;
-		  }
-		  
-		  $mysqli->close();
-		  
-
-		// daftar barang
-
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
 
 	}
 
