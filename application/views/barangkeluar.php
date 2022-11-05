@@ -59,7 +59,7 @@
                                     <?php foreach ($keluar as $i) { ?>
                                         <tr>
                                             <td><?= $i->id_keluar ?></td>
-                                            <td><?= $i->id_barang ?></td>
+                                            <td><?= $i->idbarang ?></td>
                                             <td><?= $i->nama_barang ?></td>
                                             <td><?= $i->jumlah?></td>
                                             <td><?= $i->harga ?></td>
@@ -92,7 +92,7 @@
                     <div class="modal-body">
                     <input type="text" name="id_keluar" placeholder="id_keluar" class="form-control">
                     <br>
-                    <input type="text" name="id_barang" placeholder="id_barang" class="form-control">
+                    <input type="text" name="idbarang" placeholder="idbarang" class="form-control">
                     <br>
                     <input type="text" name="nama_barang" placeholder="nama_barang" class="form-control">
                     <br>

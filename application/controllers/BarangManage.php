@@ -87,7 +87,7 @@ class BarangManage extends CI_Controller {
         // variabel form tambah barang
 		$variable = $this->input->post();
 		$id_masuk = $variable["id_masuk"];
-		$id_barang = $variable["id_barang"];
+		$idbarang = $variable["idbarang"];
 		$nama_barang = $variable["nama_barang"];
 		$jumlah = $variable["jumlah"];
 		$harga= $variable["harga"];
@@ -95,7 +95,7 @@ class BarangManage extends CI_Controller {
 		
 		$data = array(
 			'id_masuk' => $id_masuk,
-			'id_barang' => $id_barang,
+			'idbarang' => $idbarang,
 			'nama_barang' => $nama_barang,
 			'jumlah' => $jumlah,
 			'harga' => $harga,
@@ -132,7 +132,7 @@ class BarangManage extends CI_Controller {
         // variabel form tambah barang
 		$variable = $this->input->post();
 		$id_keluar = $variable["id_keluar"];
-		$id_barang = $variable["id_barang"];
+		$idbarang = $variable["idbarang"];
 		$nama_barang = $variable["nama_barang"];
 		$jumlah = $variable["jumlah"];
 		$harga= $variable["harga"];
@@ -141,7 +141,7 @@ class BarangManage extends CI_Controller {
 		// query insert ke table  
 		$data = array(
 			'id_keluar' => $id_keluar,
-			'id_barang' => $id_barang,
+			'idbarang' => $idbarang,
 			'nama_barang' => $nama_barang,
 			'jumlah' => $jumlah,
 			'harga' => $harga,

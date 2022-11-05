@@ -9,8 +9,15 @@ class M_barang extends CI_Model{
 	function hapus_data($where,$table){ 
 		$this->db->where($where); 
 		$this->db->delete($table); 
-	} 
+	}	
 	function cek_login($table,$where){ 
 		return $this->db->get_where($table,$where); 
 	} 
+	function addStok($idbarang, $jmlstok) {
+		return $this->db->query("UPDATE barang b SET b.stok = (b.stok + ".$jmlstok.") WHERE b.idbarang = '".$idbarang."';");
+	}
+	function reduceStok($idbarang, $jmlstok) {
+		return $this->db->query("UPDATE barang b SET b.stok = (b.stok - ".$jmlstok.") WHERE b.idbarang = '".$idbarang."';");
+	}
+	
 }
