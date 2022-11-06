@@ -65,9 +65,15 @@
                             <div class="mt-4 mb-0">
                                 <div class="d-grid">
                                   <input class="btn btn-primary btn-block" type='submit' value='Ubah'>
-                                  <a href="<?= base_url('index.php/barang/'.$barang->idbarang.'/hitremove') ?>" class="btn btn-danger btn-block">Hapus</a>
+                                  <a href="javascript:formSubmit('<?= $barang->idbarang ?>');" class="btn btn-danger btn-block">Hapus</a>
                                 </div>
                             </div>
+                        </form>
+                        
+                        
+                        <form id="formdel_<?= $barang->idbarang ?>" action='<?= base_url('index.php/barang/'.$barang->idbarang.'/hitremove')?>' method='POST'>
+                            <input type='hidden' name='aksi' value="delete" >
+                            <input type='hidden' name='idbarang' value="<?= $barang->idbarang ?>" >
                         </form>
                     </div>
                     
@@ -77,6 +83,12 @@
                 </footer>
             </div>
         </div>
+        
+        <script>
+            function formSubmit(id) {
+                $('form#formdel_'+id).submit();
+            }
+        </script>
         
         <?php include "navigator/bottomscript.php" ?>
 
