@@ -57,9 +57,9 @@ class BarangManage extends CI_Controller {
 			'stok' => $stok,
 		);
 		
-		$statusinsert = $this->m_barang->input_data($data, 'barang');
+		$status = $this->m_barang->input_data($data, 'barang');
 		
-		if($statusinsert) {
+		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */
@@ -70,6 +70,59 @@ class BarangManage extends CI_Controller {
 			 */
 		}
 
+	}
+	
+	public function goedit($id){
+		$data['barang'] = $this->m_barang->ambil_data_satu($id)->row(); 
+		$this->load->view('barang_edit', $data);
+	}
+	
+	public function doedit($id) {
+	
+		$variable = $this->input->post();
+		$idbarang = $variable["idbarang"];
+		$namabarang = $variable["namabarang"];
+		$harga= $variable["harga"];
+		$stok= $variable["stok"];
+		
+		$data = array(
+			'namabarang' => $namabarang,
+			'harga' => $harga,
+			'stok' => $stok,
+		);
+		
+		$status = $this->m_barang->update_data($idbarang,$data);
+		
+		if($status) {
+			/**
+			 * todo add, conditional if success insert
+			 */
+			header('location:'.base_url('/index.php/barang/'.$idbarang.'/edit'));
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
+		
+	}
+	public function doremove($id){
+		
+		$variable = $this->input->post();
+		$idbarang = $variable["idbarang"];
+		
+		$status = $this->m_barang->delete_data($idbarang);
+		
+		if($status) {
+			/**
+			 * todo add, conditional if success insert
+			 */
+			header('location:'.base_url('/index.php/barang'));
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
+		
 	}
 
 	public function tambahdatamasuk()
@@ -102,9 +155,9 @@ class BarangManage extends CI_Controller {
 			'tanggal' => $tanggal,
 		);
 
-		$statusinsert = $this->m_masuk->input_data($data, 'masuk');
+		$status = $this->m_masuk->input_data($data, 'masuk');
 		
-		if($statusinsert) {
+		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */
@@ -148,9 +201,9 @@ class BarangManage extends CI_Controller {
 			'tanggal' => $tanggal,
 		);
 
-		$statusinsert = $this->m_keluar->input_data($data, 'keluar');
+		$status = $this->m_keluar->input_data($data, 'keluar');
 		
-		if($statusinsert) {
+		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */

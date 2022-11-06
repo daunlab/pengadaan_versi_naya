@@ -54,11 +54,17 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['barang'] = 'barangmanage';
-$route['masuk-barang'] = 'barangmanage/masuk';
-$route['keluar-barang'] = 'barangmanage/keluar';
 $route['hitinsertbrg'] = 'barangmanage/tambahbarang';
+$route['barang/(:any)/edit'] = 'barangmanage/goedit/$1';
+$route['barang/(:any)/hitedit'] = 'barangmanage/doedit/$1';
+$route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
+
+$route['masuk-barang'] = 'barangmanage/masuk';
 $route['hitinsertbrgmasuk'] ='barangmanage/tambahdatamasuk/';
+
+$route['keluar-barang'] = 'barangmanage/keluar';
 $route['hitinsertbrgkeluar'] ='barangmanage/tambahdatakeluar/';
+
 $route['hitlaporan'] ='barangmanage';
 
 $route['dashboard'] = 'dashboard';

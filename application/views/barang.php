@@ -65,9 +65,12 @@
                                             <td><?= $i->harga?></td>
                                             <td><?= $i->stok?></td>
                                             <td class="text-center">
-                                                <a href="" class="btn btn-warning btn-sm">Hapus</a>
-                                                <a href="" class="btn btn-danger btn-sm">Edit</a>
-                                                
+                                                <form id="formdel_<?= $i->idbarang ?>" action='<?= base_url('index.php/barang/'.$i->idbarang.'/hitremove')?>' method='POST'>
+                                                    <input type='hidden' name='aksi' value="delete" >
+                                                    <input type='hidden' name='idbarang' value="<?= $i->idbarang ?>" >
+                                                </form>
+                                                <a href="<?= base_url('index.php/barang/'.$i->idbarang.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
+                                                <a href="javascript:formSubmit('<?= $i->idbarang ?>');" class="btn btn-warning btn-sm">Hapus</a>
                                                 </td>
                                         
                                     
@@ -112,6 +115,12 @@
                 </footer>
             </div>
         </div>
+        
+        <script>
+            function formSubmit(id) {
+                $('form#formdel_'+id).submit();
+            }
+        </script>
         
         <?php include "navigator/bottomscript.php" ?>
 
