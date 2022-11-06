@@ -52,6 +52,7 @@
                                             <th>Nama Barang </th>
                                             <th>Harga </th>
                                             <th>stok</th>
+                                            <th>jenis</th>
                                             <th class="text-center">aksi</th>
                                             
                                         </tr>
@@ -64,6 +65,7 @@
                                             <td><?= $i->namabarang?></td>
                                             <td><?= $i->harga?></td>
                                             <td><?= $i->stok?></td>
+                                            <td><?= $i->jenis?></td>
                                             <td class="text-center">
                                                 <form id="formdel_<?= $i->idbarang ?>" action='<?= base_url('index.php/barang/'.$i->idbarang.'/hitremove')?>' method='POST'>
                                                     <input type='hidden' name='aksi' value="delete" >
@@ -104,6 +106,8 @@
                         <input type="text" name="harga" placeholder="harga" class="form-control">
                         <br>
                         <input type="text" name="stok" placeholder="stok" class="form-control">
+                        <br>
+                        <input type="text" name="jenis" placeholder="jenis" class="form-control">
                         <br>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         </div>

@@ -81,7 +81,7 @@
                                             <th>ID Transaksi</th>
                                             <th>ID Barang</th>
                                             <th>Nama Barang</th>
-                                            <th>Jumlah</th>
+                                            <th>stok</th>
                                             <th>Harga</th>
                                             <th>Tanggal</th>
                                         </tr>
@@ -92,7 +92,7 @@
                                             <th>ID Transaksi</th>
                                             <th>ID Barang</th>
                                             <th>Nama Barang</th>
-                                            <th>Jumlah</th>
+                                            <th>jumlah</th>
                                             <th>Harga</th>
                                             <th>Tanggal</th>
                                         </tr>
@@ -104,7 +104,7 @@
                                             <td><?= $i->id_trx ?></td>
                                             <td><?= $i->idbarang ?></td>
                                             <td><?= $i->nama_barang ?></td>
-                                            <td><?= $i->jumlah ?></td>
+                                            <td><?= $i->jumlah?></td>
                                             <th><?= $i->harga ?></th>
                                             <th><?= $i->tanggal ?></th>
                                         </tr>

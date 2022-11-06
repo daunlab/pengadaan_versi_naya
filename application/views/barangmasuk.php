@@ -48,8 +48,9 @@
                                         <tr>
                                             <th>ID Masuk</th>
                                             <th>ID Barang</th>
+                                            <th>Nama konsumen</th>
                                             <th>Nama barang</th>
-                                            <th>Jumlah </th>
+                                            <th>jumlah </th>
                                             <th>Harga </th>
                                             <th>Tanggal </th>
                                             <th class="text-center">aksi</th>
@@ -60,14 +61,19 @@
                                         <tr>
                                             <td><?= $i->id_masuk  ?></td>
                                             <td><?= $i->idbarang ?></td>
+                                            <td><?= $i->nama_konsumen ?></td>
                                             <td><?= $i->nama_barang ?></td>
                                             <td><?= $i->jumlah ?></td>
                                             <th><?= $i->harga ?></th>
                                             <th><?= $i->tanggal ?></th>
                                             <td class="text-center">
-                                                <a href="" class="btn btn-warning btn-sm">Hapus</a>
-                                                <a href="<?php echo site_url('barangManage/edit'). $i->id_masuk ?>" class="btn btn-danger btn-sm">Edit</a>
-                                            </td>
+                                                <form id="formdel_<?= $i->idbarang ?>" action='<?= base_url('index.php/masuk/'.$i->idbarang.'/hitremove')?>' method='POST'>
+                                                    <input type='hidden' name='aksi' value="delete" >
+                                                    <input type='hidden' name='idbarang' value="<?= $i->idbarang ?>" >
+                                                </form>
+                                                <a href="<?= base_url('index.php/masuk/'.$i->idbarang.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
+                                                <a href="javascript:formSubmit('<?= $i->idbarang ?>');" class="btn btn-warning btn-sm">Hapus</a>
+                                                </td>
                                         </tr>
                                         <?php } ?>
                                         <tr>
@@ -95,6 +101,8 @@
                     <br/>
                     <input type="text" name="idbarang" placeholder="idbarang" class="form-control">
                     <br>
+                    <input type="text" name="nama_konsumen" placeholder="nama_konsumen" class="form-control">
+                    <br>
                     <input type="text" name="nama_barang" placeholder="nama_barang" class="form-control">
                     <br>
                     <input type="text" name="jumlah" placeholder="jumlah" class="form-control">
@@ -113,6 +121,12 @@
                 </footer>
             </div>
         </div>
+        <script>
+
+            function formSubmit(id) {
+                $('form#formdel_'+id).submit();
+            }
+        </script>
         
         <?php include "navigator/bottomscript.php" ?>
 

@@ -49,12 +49,14 @@ class BarangManage extends CI_Controller {
 		$namabarang = $variable["namabarang"];
 		$harga= $variable["harga"];
 		$stok= $variable["stok"];
+		$jenis= $variable["jenis"];
 		
 		$data = array(
 			'idbarang' => $idbarang,
 			'namabarang' => $namabarang,
 			'harga' => $harga,
 			'stok' => $stok,
+			'jenis' => $jenis,
 		);
 		
 		$status = $this->m_barang->input_data($data, 'barang');
@@ -124,11 +126,10 @@ class BarangManage extends CI_Controller {
 		}
 		
 	}
-
 	public function tambahdatamasuk()
 	{
 		// koneksi database
-		    $mysqli = new mysqli("localhost","root","mysql","db_app_naya_01");
+		    $mysqli = new mysqli("localhost","root","","pendataan");
 
 		// validasi database
 		if ($mysqli -> connect_errno) {
@@ -142,7 +143,7 @@ class BarangManage extends CI_Controller {
 		$id_masuk = $variable["id_masuk"];
 		$idbarang = $variable["idbarang"];
 		$nama_barang = $variable["nama_barang"];
-		$jumlah = $variable["jumlah"];
+		$stok = $variable["stok"];
 		$harga= $variable["harga"];
 		$tanggal = $variable["tanggal"];
 		
@@ -150,7 +151,7 @@ class BarangManage extends CI_Controller {
 			'id_masuk' => $id_masuk,
 			'idbarang' => $idbarang,
 			'nama_barang' => $nama_barang,
-			'jumlah' => $jumlah,
+			'stok' => $stok,
 			'harga' => $harga,
 			'tanggal' => $tanggal,
 		);
@@ -161,19 +162,79 @@ class BarangManage extends CI_Controller {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:masuk-barang');
+			header('location:masuk_edit');
 		} else {
 			/**
 			 * todo add, conditional if failed
 			 */
 		}
-
-
 	}
+	
+	public function yuedit($id){
+		$data['masuk'] = $this->m_masuk->ambil_data_satu($id)->row(); 
+		$this->load->view('masuk_edit', $data);
+	}
+	
+	public function diedit($id) {
+	
+		$variable = $this->input->post();
+		$idmasuk = $variable["idmasuk"];
+		$idbarang = $variable["idbarang"];
+		$nama_konsumen= $variable["nama_konsumen"];
+		$nama_barang= $variable["nama_barang"];
+		$stok= $variable["stok"];
+		$harga= $variable["harga"];
+		$tanggal= $variable["tanggal"];
+
+		
+		$data = array(
+			'idmasuk' => $idmasuk,
+			'namakonsumen' => $nama_konsumen,
+			'namabarang' => $nama_barang,
+			'stok' => $stok,
+			'harga' => $harga,
+			
+		);
+		
+		$status = $this->m_masuk->update_data($idbarang,$data);
+		
+		if($status) {
+			/**
+			 * todo add, conditional if success insert
+			 */
+			header('location:'.base_url('/index.php/masuk/'.$idbarang.'/edit'));
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
+		
+	}
+	public function diremove($id){
+		
+		$variable = $this->input->post();
+		$idbarang = $variable["idbarang"];
+		
+		$status = $this->m_barang->delete_data($idbarang);
+		
+		if($status) {
+			/**
+			 * todo add, conditional if success insert
+			 */
+			header('location:'.base_url('/index.php/masuk'));
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
+		
+	}
+
+	
 	public function tambahdatakeluar()
 	{
 		// koneksi database
-		    $mysqli = new mysqli("localhost","root","mysql","db_app_naya_01");
+		    $mysqli = new mysqli("localhost","root","","pendataan");
 
 		// validasi database
 		if ($mysqli -> connect_errno) {
@@ -186,6 +247,7 @@ class BarangManage extends CI_Controller {
 		$variable = $this->input->post();
 		$id_keluar = $variable["id_keluar"];
 		$idbarang = $variable["idbarang"];
+		$nama_pembeli = $variable["nama_pembeli"];
 		$nama_barang = $variable["nama_barang"];
 		$jumlah = $variable["jumlah"];
 		$harga= $variable["harga"];
@@ -195,6 +257,7 @@ class BarangManage extends CI_Controller {
 		$data = array(
 			'id_keluar' => $id_keluar,
 			'idbarang' => $idbarang,
+			'nama_pembeli' => $nama_pembeli,
 			'nama_barang' => $nama_barang,
 			'jumlah' => $jumlah,
 			'harga' => $harga,
@@ -225,10 +288,5 @@ class BarangManage extends CI_Controller {
 		  
 
 		
-		}
-
-
-
-	}
-
-
+	    }
+}

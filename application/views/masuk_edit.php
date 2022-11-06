@@ -33,17 +33,31 @@
                     </div>
                     
                     <div class="card-body">
-                        <form action="<?= base_url('index.php/barang/'.$barang->idbarang.'/hitedit') ?>" method="POST" >
+                        <form action="<?= base_url('index.php/masuk/'.$masuk->idbarang.'/hitedit') ?>" method="POST" >
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="idbarang" type="text" value="<?= $barang->idbarang ?>" placeholder="Input Id Barang">
-                                        <label for="inputFirstName">Id Barang</label>
+                                        <input class="form-control" id="inputFirstName" name="idmasuk" type="text" value="<?= $barang->idbarang ?>" placeholder="Input idmasuk">
+                                        <label for="inputFirstName">Id Masuk</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="namabarang" type="text" value="<?= $barang->namabarang ?>" placeholder="Input Nama Barang">
+                                        <input class="form-control" id="inputLastName" name="idbarang" type="text" value="<?= $barang->namabarang ?>" placeholder="input idbarang">
+                                        <label for="inputLastName">Id Barang</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputFirstName" name="nama_konsumen" type="text" value="<?= $barang->harga ?>" placeholder="input nama_konsumen>
+                                        <label for="inputFirstName">Nama Konsumen</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input class="form-control" id="inputLastName" name="nama_barang" type="text" value="<?= $barang->stok ?>" placeholder="input nama_barang ">
                                         <label for="inputLastName">Nama Barang</label>
                                     </div>
                                 </div>
@@ -51,17 +65,24 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="harga" type="text" value="<?= $barang->harga ?>" placeholder="Input Harga Barang">
-                                        <label for="inputFirstName">Harga Barang</label>
+                                        <input class="form-control" id="inputFirstName" name="stok" type="text" value="<?= $barang->harga ?>" placeholder="input stok">
+                                        <label for="inputFirstName">Stok</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="stok" type="text" value="<?= $barang->stok ?>" placeholder="Input Stok Barang">
-                                        <label for="inputLastName">Stok</label>
+                                        <input class="form-control" id="inputLastName" name="nama_barang" type="text" value="<?= $barang->harga ?>" placeholder="input harga ">
+                                        <label for="inputLastName">Harga</label>
                                     </div>
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputFirstName" name="tanggal" type="text" value="<?= $barang->harga ?>" placeholder="input tanggal">
+                                        <label for="inputFirstName">Tanggal</label>
+                                    </div>
+                                </div>
                             <div class="mt-4 mb-0">
                                 <div class="d-grid">
                                   <input class="btn btn-primary btn-block" type='submit' value='Ubah'>
@@ -70,8 +91,8 @@
                             </div>
                         </form>
                         
-                
-                        <form id="formdel_<?= $barang->idbarang ?>" action='<?= base_url('index.php/barang/'.$barang->idbarang.'/hitremove')?>' method='POST'>
+                        
+                        <form id="formdel_<?= $masuk->id_masuk ?>" action='<?= base_url('index.php/masuk/'.$barang->idbarang.'/hitremove')?>' method='POST'>
                             <input type='hidden' name='aksi' value="delete" >
                             <input type='hidden' name='idbarang' value="<?= $barang->idbarang ?>" >
                         </form>

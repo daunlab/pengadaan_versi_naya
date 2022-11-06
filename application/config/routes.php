@@ -61,9 +61,15 @@ $route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
 
 $route['masuk-barang'] = 'barangmanage/masuk';
 $route['hitinsertbrgmasuk'] ='barangmanage/tambahdatamasuk/';
+$route['masuk/(:any)/edit'] = 'barangmanage/yuedit/$1';
+$route['masuk/(:any)/hitedit'] = 'barangmanage/diedit/$1';
+$route['masuk/(:any)/hitremove'] = 'barangmanage/diremove/$1';
 
 $route['keluar-barang'] = 'barangmanage/keluar';
 $route['hitinsertbrgkeluar'] ='barangmanage/tambahdatakeluar/';
+$route['barang/(:any)/edit'] = 'barangmanage/goedit/$1';
+$route['barang/(:any)/hitedit'] = 'barangmanage/doedit/$1';
+$route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
 
 $route['hitlaporan'] ='barangmanage';
 

@@ -48,8 +48,9 @@
                                         <tr>
                                             <th>ID Keluar </th>
                                             <th>ID barang</th>
+                                            <th>Nama Pembeli</th>
                                             <th>Nama barang</th>
-                                            <th>Jumlah </th>
+                                            <th>stok </th>
                                             <th>Harga </th>
                                             <th>Tanggal </th>                     
                                             <th class="text-center">aksi</th>
@@ -60,13 +61,19 @@
                                         <tr>
                                             <td><?= $i->id_keluar ?></td>
                                             <td><?= $i->idbarang ?></td>
+                                            <td><?= $i->nama_pembeli ?></td>
                                             <td><?= $i->nama_barang ?></td>
-                                            <td><?= $i->jumlah?></td>
+                                            <td><?= $i->stok?></td>
                                             <td><?= $i->harga ?></td>
                                             <th><?= $i->tanggal ?></th>
                                             <td class="text-center">
-                                            <p class="d-inline btn btn-danger btn-sm text-dark" style="text-decoration: none;"><?php echo anchor('barangManage/edit/'.$i->id_keluar,'Edit'); ?></p>                                                
-                                                <p class="d-inline btn btn-warning btn-sm text-dark" style="text-decoration: none;"><?php echo anchor('barangManage/hapus/'.$i->id_keluar,'hapus'); ?></p>
+                                                <form id="formdel_<?= $i->idbarang ?>" action='<?= base_url('index.php/keluar/'.$i->idbarang.'/hitremove')?>' method='POST'>
+                                                    <input type='hidden' name='aksi' value="delete" >
+                                                    <input type='hidden' name='idbarang' value="<?= $i->idbarang ?>" >
+                                                </form>
+                                                <a href="<?= base_url('index.php/keluar/'.$i->idbarang.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
+                                                <a href="javascript:formSubmit('<?= $i->idbarang ?>');" class="btn btn-warning btn-sm">Hapus</a>
+                                                </td>
                                         </tr>
                                         <?php } ?>
                                         <tr>
@@ -94,6 +101,8 @@
                     <br>
                     <input type="text" name="idbarang" placeholder="idbarang" class="form-control">
                     <br>
+                    <input type="text" name="nama_pembeli" placeholder="nama_pembeli" class="form-control">
+                    <br>
                     <input type="text" name="nama_barang" placeholder="nama_barang" class="form-control">
                     <br>
                     <input type="text" name="jumlah" placeholder="jumlah" class="form-control">
@@ -112,6 +121,11 @@
                 </footer>
             </div>
         </div>
+        <script>
+            function formSubmit(id) {
+                $('form#formdel_'+id).submit();
+            }
+        </script>
         
         <?php include "navigator/bottomscript.php" ?>
 

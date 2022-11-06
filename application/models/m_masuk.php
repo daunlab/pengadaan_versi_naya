@@ -3,12 +3,18 @@ class M_masuk extends CI_Model{
 	
 	function __construct(){ 
 		parent::__construct(); 
-		$this->load->model('m_barang');
+		$this->load->model('m_masuk');
 	}
 	
 	function ambil_data(){ 
 		return $this->db->get('masuk'); 
 	} 
+
+    function ambil_data_satu($id){ 
+	$limit = 1;
+	$offset = 0;
+	return $this->db->get_where('masuk', array('idbarang' => $id), $limit, $offset); 
+    }
 	function input_data($data,$table){ 
 	
 		/**
