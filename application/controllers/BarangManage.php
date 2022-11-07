@@ -8,15 +8,6 @@ class BarangManage extends CI_Controller {
 		$this->load->model('m_barang');
 		$this->load->model('m_masuk');
 		$this->load->model('m_keluar');
-		
-	}
-	public function dashboard()
-    {
-	$this->load->view('dashboard', $data);	
-	} 
-	public function laporan()
-	{
-		$this->load->view('laporan', $data);
 	}
 
 	public function index()

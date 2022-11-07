@@ -50,7 +50,7 @@
                                             <th>ID barang</th>
                                             <th>Nama Pembeli</th>
                                             <th>Nama barang</th>
-                                            <th>stok </th>
+                                            <th>jumlah </th>
                                             <th>Harga </th>
                                             <th>Tanggal </th>                     
                                             <th class="text-center">aksi</th>
@@ -63,7 +63,7 @@
                                             <td><?= $i->idbarang ?></td>
                                             <td><?= $i->nama_pembeli ?></td>
                                             <td><?= $i->nama_barang ?></td>
-                                            <td><?= $i->stok?></td>
+                                            <td><?= $i->jumlah?></td>
                                             <td><?= $i->harga ?></td>
                                             <th><?= $i->tanggal ?></th>
                                             <td class="text-center">

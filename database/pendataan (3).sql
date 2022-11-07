@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2022 at 04:06 AM
+-- Generation Time: Nov 07, 2022 at 01:59 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -40,7 +40,7 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`idbarang`, `namabarang`, `harga`, `stok`, `jenis`) VALUES
-('1001', 'Lemari', 'Rp.550.000', 7, 'Barang Jadi'),
+('1001', 'Lemari', 'Rp.550.000', 10, 'Barang Jadi'),
 ('1003', 'Jendela', 'Rp. 400,000', 8, 'Barang Jadi'),
 ('1004', 'kayu jati', 'Rp. 5.000.000', 260, 'Barang Mentah');
 
@@ -51,7 +51,7 @@ INSERT INTO `barang` (`idbarang`, `namabarang`, `harga`, `stok`, `jenis`) VALUES
 --
 
 CREATE TABLE `keluar` (
-  `id_keluar` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `id_keluar` int(11) NOT NULL,
   `idbarang` char(7) NOT NULL DEFAULT '',
   `nama_pembeli` varchar(50) CHARACTER SET latin1 NOT NULL,
   `nama_barang` varchar(20) CHARACTER SET latin1 NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `keluar` (
 --
 
 INSERT INTO `keluar` (`id_keluar`, `idbarang`, `nama_pembeli`, `nama_barang`, `jumlah`, `harga`, `tanggal`) VALUES
-('BR001', '1001', 'Pa Haji Yusuf', 'kursi', 1, 'Rp. 500.000', '2022-04-01 17:00:00');
+(1, '1001', 'Pa Haji Yusuf', 'kursi', 1, 'Rp. 500.000', '2022-04-01 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -162,6 +162,12 @@ ALTER TABLE `petugas`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `keluar`
+--
+ALTER TABLE `keluar`
+  MODIFY `id_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `masuk`
