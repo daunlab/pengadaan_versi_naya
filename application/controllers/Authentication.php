@@ -27,54 +27,30 @@ class Authentication extends CI_Controller {
 
 		session_start();
 
-		//membuat koneksi ke database
-		$mysqli = new mysqli("localhost","root","","pendataan");
-
-		 //validasi koneksi jika ada koneksi database
-		if ($mysqli -> connect_errno) {
-		  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-		  exit();
-		}
-
-		$variable = $this->input->post();
-		// var_dump($variable);
-		// // die;
+		$variable = $this->input->post();		
 
 
 		//cek login, terdaftar atau tidak
 		if(isset($variable["login"])) {
 		    $email = $variable['email'];
 		    $password = $variable['password'];
+		    
+		    $limit = 1;
+		    $offset = 0;
 
 		    //cocokin dengan database, ada atau tidak datanya
-
-			$sql = "SELECT * FROM login where email='$email' and password='$password'";
-
-			$hitung = 0;
-			if ($result = $mysqli -> query($sql)) {
-				$hitung = $result->num_rows;
-			}
-
-			$mysqli -> close();
-			
-			$data['barang'] = "select * from barang";
-			
-
-		    if($hitung>0){
-		        $_SESSION['log'] = 'True';
-		        // $this->load->view('barang');
-		        header('location:barang',"$data");
-		    } else {
-		        // $this->load->view('pages/login');
-		        header('location:login');
-		    };
-		};
-
-		// if (!isset($_SESSION['log'])){
-		    
-		// } else {
-		//     header('location:index.php');
-		// }
+				$result = $this->db->get_where('login', array('email' => $email, 'password' => $password), $limit, $offset); 
+				if($this->db->affected_rows() > 0) {
+					$_SESSION['log'] = 'True';
+					header('location:barang');
+					return true;
+				} else {
+					header('location:login');
+					return true;
+				}
+				
+				return false;
+		}
 	}
 
 	public function logout()
