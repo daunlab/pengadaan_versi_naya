@@ -119,14 +119,6 @@ class BarangManage extends CI_Controller {
 	}
 	public function tambahdatamasuk()
 	{
-		// koneksi database
-		    $mysqli = new mysqli("localhost","root","","pendataan");
-
-		// validasi database
-		if ($mysqli -> connect_errno) {
-			echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-			exit();
-		}
 
 		// query insert
         // variabel form tambah barang
@@ -224,14 +216,6 @@ class BarangManage extends CI_Controller {
 	
 	public function tambahdatakeluar()
 	{
-		// koneksi database
-		    $mysqli = new mysqli("localhost","root","","pendataan");
-
-		// validasi database
-		if ($mysqli -> connect_errno) {
-			echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-			exit();
-		}
 
 		// query insert
         // variabel form tambah barang
