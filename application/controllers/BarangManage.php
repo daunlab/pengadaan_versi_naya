@@ -134,7 +134,7 @@ class BarangManage extends CI_Controller {
 		$id_masuk = $variable["id_masuk"];
 		$idbarang = $variable["idbarang"];
 		$nama_barang = $variable["nama_barang"];
-		$stok = $variable["stok"];
+		$jumlah = $variable["jumlah"];
 		$harga= $variable["harga"];
 		$tanggal = $variable["tanggal"];
 		
@@ -142,7 +142,7 @@ class BarangManage extends CI_Controller {
 			'id_masuk' => $id_masuk,
 			'idbarang' => $idbarang,
 			'nama_barang' => $nama_barang,
-			'stok' => $stok,
+			'jumlah' => $jumlah,
 			'harga' => $harga,
 			'tanggal' => $tanggal,
 		);
@@ -173,7 +173,7 @@ class BarangManage extends CI_Controller {
 		$idbarang = $variable["idbarang"];
 		$nama_konsumen= $variable["nama_konsumen"];
 		$nama_barang= $variable["nama_barang"];
-		$stok= $variable["stok"];
+		$jumlah= $variable["jumlah"];
 		$harga= $variable["harga"];
 		$tanggal= $variable["tanggal"];
 
@@ -182,7 +182,7 @@ class BarangManage extends CI_Controller {
 			'idmasuk' => $idmasuk,
 			'namakonsumen' => $nama_konsumen,
 			'namabarang' => $nama_barang,
-			'stok' => $stok,
+			'jumlah' => $jumlah,
 			'harga' => $harga,
 			
 		);
