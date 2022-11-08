@@ -34,9 +34,9 @@ class M_masuk extends CI_Model{
 			return false;
 		}
 	} 
-	function hapus_data($where,$table){ 
-		$this->db->where($where); 
-		$this->db->delete($table); 
+	function hapus_data($id){ 
+		$this->db->where('masuk'); 
+		return $this->db->delete($this->masuk, array('idbarang' => $jumlah));
 	} 
 	function cek_login($table,$where){ 
 		return $this->db->get_where($table,$where); 

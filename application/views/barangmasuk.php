@@ -48,9 +48,10 @@
                                         <tr>
                                             <th>ID Masuk</th>
                                             <th>ID Barang</th>
-                                            <th>Nama konsumen</th>
+                                            <th>Nama supplier</th>
                                             <th>Nama barang</th>
                                             <th>jumlah </th>
+                                            <th>stok </th>
                                             <th>Harga </th>
                                             <th>Tanggal </th>
                                             <th class="text-center">aksi</th>
@@ -61,9 +62,10 @@
                                         <tr>
                                             <td><?= $i->id_masuk  ?></td>
                                             <td><?= $i->idbarang ?></td>
-                                            <td><?= $i->nama_konsumen ?></td>
+                                            <td><?= $i->nama_supplier ?></td>
                                             <td><?= $i->nama_barang ?></td>
                                             <td><?= $i->jumlah ?></td>
+                                            <th><?= $i->stok ?></th>
                                             <th><?= $i->harga ?></th>
                                             <th><?= $i->tanggal ?></th>
                                             <td class="text-center">
@@ -101,11 +103,13 @@
                     <br/>
                     <input type="text" name="idbarang" placeholder="idbarang" class="form-control">
                     <br>
-                    <input type="text" name="nama_konsumen" placeholder="nama_konsumen" class="form-control">
+                    <input type="text" name="nama_supplier" placeholder="nama_supplier" class="form-control">
                     <br>
                     <input type="text" name="nama_barang" placeholder="nama_barang" class="form-control">
                     <br>
                     <input type="text" name="jumlah" placeholder="jumlah" class="form-control">
+                    <br>
+                    <input type="text" name="stok" placeholder="stok" class="form-control">
                     <br>
                     <input type="text" name="harga" placeholder="harga" class="form-control">
                     <br>

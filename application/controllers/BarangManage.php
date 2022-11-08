@@ -125,16 +125,20 @@ class BarangManage extends CI_Controller {
 		$variable = $this->input->post();
 		$id_masuk = $variable["id_masuk"];
 		$idbarang = $variable["idbarang"];
+		$nama_supplier = $variable["nama_supplier"];
 		$nama_barang = $variable["nama_barang"];
 		$jumlah = $variable["jumlah"];
+		$stok = $variable["stok"];
 		$harga= $variable["harga"];
 		$tanggal = $variable["tanggal"];
 		
 		$data = array(
 			'id_masuk' => $id_masuk,
 			'idbarang' => $idbarang,
+			'nama_supplier' => $nama_supplier,
 			'nama_barang' => $nama_barang,
 			'jumlah' => $jumlah,
+			'stok' => $stok,
 			'harga' => $harga,
 			'tanggal' => $tanggal,
 		);
@@ -145,7 +149,7 @@ class BarangManage extends CI_Controller {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:masuk_edit');
+			header('location:masuk');
 		} else {
 			/**
 			 * todo add, conditional if failed
@@ -163,18 +167,20 @@ class BarangManage extends CI_Controller {
 		$variable = $this->input->post();
 		$idmasuk = $variable["idmasuk"];
 		$idbarang = $variable["idbarang"];
-		$nama_konsumen= $variable["nama_konsumen"];
+		$nama_supplier= $variable["nama_supplier"];
 		$nama_barang= $variable["nama_barang"];
 		$jumlah= $variable["jumlah"];
+		$stok= $variable["stok"];
 		$harga= $variable["harga"];
 		$tanggal= $variable["tanggal"];
 
 		
 		$data = array(
 			'idmasuk' => $idmasuk,
-			'namakonsumen' => $nama_konsumen,
+			'nama_supllier' => $nama_supplier,
 			'namabarang' => $nama_barang,
 			'jumlah' => $jumlah,
+			'stok' => $stok,
 			'harga' => $harga,
 			
 		);
@@ -185,7 +191,7 @@ class BarangManage extends CI_Controller {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:'.base_url('/index.php/masuk/'.$idbarang.'/edit'));
+			header('location:'.base_url('/index.php/barang/'.$idbarang.'/edit'));
 		} else {
 			/**
 			 * todo add, conditional if failed

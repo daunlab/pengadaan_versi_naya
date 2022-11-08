@@ -37,7 +37,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="idmasuk" type="text" value="<?= $barang->idbarang ?>" placeholder="Input idmasuk">
+                                        <input class="form-control" id="inputFirstName" name="id_masuk" type="text" value="<?= $barang->idbarang ?>" placeholder="Input id_masuk">
                                         <label for="inputFirstName">Id Masuk</label>
                                     </div>
                                 </div>
@@ -51,13 +51,13 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="nama_konsumen" type="text" value="<?= $barang->harga ?>" placeholder="input nama_konsumen>
-                                        <label for="inputFirstName">Nama Konsumen</label>
+                                        <input class="form-control" id="inputFirstName" name="nama_supplier" type="text" value="<?= $barang->nama_konsumen ?>" placeholder="input nama_supplier">
+                                        <label for="inputFirstName">Nama supplier</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="nama_barang" type="text" value="<?= $barang->stok ?>" placeholder="input nama_barang ">
+                                        <input class="form-control" id="inputLastName" name="nama_barang" type="text" value="<?= $barang->nama_barang ?>" placeholder="input nama_barang ">
                                         <label for="inputLastName">Nama Barang</label>
                                     </div>
                                 </div>
@@ -65,33 +65,37 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="stok" type="text" value="<?= $barang->harga ?>" placeholder="input stok">
-                                        <label for="inputFirstName">Stok</label>
+                                        <input class="form-control" id="inputFirstName" name="jumlah" type="text" value="<?= $barang->jumlah ?>" placeholder="input jumlah">
+                                        <label for="inputFirstName">jumlah</label>
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputFirstName" name="stok" type="text" value="<?= $barang->harga ?>" placeholder="input stok">
+                                        <label for="inputFirstName">stok</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputFirstName" name="harga" type="text" value="<?= $barang->harga ?>" placeholder="input harga">
+                                        <label for="inputFirstName">harga</label>
+                                <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="nama_barang" type="text" value="<?= $barang->harga ?>" placeholder="input harga ">
-                                        <label for="inputLastName">Harga</label>
+                                        <input class="form-control" id="inputLastName" name="tanggal" type="text" value="<?= $barang->harga ?>" placeholder="tanggal ">
+                                        <label for="inputLastName">tanggal</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="tanggal" type="text" value="<?= $barang->harga ?>" placeholder="input tanggal">
-                                        <label for="inputFirstName">Tanggal</label>
-                                    </div>
-                                </div>
                             <div class="mt-4 mb-0">
                                 <div class="d-grid">
                                   <input class="btn btn-primary btn-block" type='submit' value='Ubah'>
                                   <a href="javascript:formSubmit('<?= $barang->idbarang ?>');" class="btn btn-danger btn-block">Hapus</a>
                                 </div>
                             </div>
-                        </form>
-                        
-                        
+                        </form>                      
                         <form id="formdel_<?= $masuk->id_masuk ?>" action='<?= base_url('index.php/masuk/'.$barang->idbarang.'/hitremove')?>' method='POST'>
                             <input type='hidden' name='aksi' value="delete" >
                             <input type='hidden' name='idbarang' value="<?= $barang->idbarang ?>" >
