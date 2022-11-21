@@ -2,6 +2,7 @@
 <?php
 
 include_once "config.php";
+include_once "static_data.php";
 
 /**
  * CodeIgniter

@@ -7,20 +7,20 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - Deran Kusen</title>
-        <?php include "navigator/topscript.php"; ?>
+        <?php $this->load->view('navigator/topscript'); ?>
     </head>
     <body class="sb-nav-fixed">
         
         <!-- start top nav -->
 
-        <?php include "navigator/topnav.php"; ?>
+        <?php $this->load->view('navigator/topnav.php'); ?>
 
         <!-- end top nav -->
 
         <div id="layoutSidenav">
             
             <!-- start navigator -->
-                <?php include "navigator/mainnav.php"; ?>
+                <?php $this->load->view('navigator/mainnav.php'); ?>
             <!-- send navigator -->
 
 
@@ -40,9 +40,9 @@
                             <div class="card-header">
                             <div class="container">
                             <div class="container mt-3">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                            Tambah Barang yang Dijual
-                            </button>
+                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"> -->
+                            <a class="btn btn-primary" href="<?= base_url('index.php/barang/tambah'); ?>">Tambah Barang yang Dijual</a>
+                            <!-- </button> -->
                         </div>
                         <div class="card-body">
                                 <table id="datatablesSimple">
@@ -50,6 +50,7 @@
                                         <tr>
                                             <th>ID Barang </th>
                                             <th>Nama Barang </th>
+                                            <th>Satuan </th>
                                             <th>Harga </th>
                                             <th>stok</th>
                                             <th>jenis</th>
@@ -61,18 +62,19 @@
                                     
                                         <?php foreach ($barang as $i) { ?>
                                         <tr>
-                                            <td><?= $i->idbarang ?></td>
-                                            <td><?= $i->namabarang?></td>
+                                            <td><?= $i->id ?></td>
+                                            <td><?= $i->nama?></td>
+                                            <td><?= $i->satuan?></td>
                                             <td><?= $i->harga?></td>
                                             <td><?= $i->stok?></td>
                                             <td><?= $i->jenis?></td>
                                             <td class="text-center">
-                                                <form id="formdel_<?= $i->idbarang ?>" action='<?= base_url('index.php/barang/'.$i->idbarang.'/hitremove')?>' method='POST'>
+                                                <form id="formdel_<?= $i->id ?>" action='<?= base_url('index.php/barang/'.$i->id.'/hitremove')?>' method='POST'>
                                                     <input type='hidden' name='aksi' value="delete" >
-                                                    <input type='hidden' name='idbarang' value="<?= $i->idbarang ?>" >
+                                                    <input type='hidden' name='id' value="<?= $i->id ?>" >
                                                 </form>
-                                                <a href="<?= base_url('index.php/barang/'.$i->idbarang.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
-                                                <a href="javascript:formSubmit('<?= $i->idbarang ?>');" class="btn btn-warning btn-sm">Hapus</a>
+                                                <a href="<?= base_url('index.php/barang/'.$i->id.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
+                                                <a href="javascript:formSubmit('<?= $i->id ?>');" class="btn btn-warning btn-sm">Hapus</a>
                                                 </td>
                                         
                                     
@@ -99,7 +101,7 @@
                         <!-- Modal body -->
                         <form method="post" action="<?php echo base_url("index.php/hitinsertbrg")?>">
                         <div class="modal-body">
-                        <input type="text" name="idbarang" placeholder="id barang" class="form-control">
+                        <input type="text" name="id" placeholder="id barang" class="form-control">
                         <br>
                         <input type="text" name="namabarang" placeholder="nama barang" class="form-control">
                         <br>
@@ -115,7 +117,7 @@
 
                 </main>
                 <footer class="py-4 bg-light mt-auto">
-                    <?php include "pages/footer.php" ?>
+                    <?php $this->load->view('pages/footer.php'); ?>
                 </footer>
             </div>
         </div>
@@ -126,7 +128,7 @@
             }
         </script>
         
-        <?php include "navigator/bottomscript.php" ?>
+        <?php $this->load->view('navigator/bottomscript.php'); ?>
 
     </body>
 </html>

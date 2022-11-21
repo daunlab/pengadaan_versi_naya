@@ -54,6 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['barang'] = 'barangmanage';
+$route['barang/tambah'] = 'barangmanage/goadd';
+$route['barang/hittambah'] = 'barangmanage/doadd';
 $route['hitinsertbrg'] = 'barangmanage/tambahbarang';
 $route['barang/(:any)/edit'] = 'barangmanage/goedit/$1';
 $route['barang/(:any)/hitedit'] = 'barangmanage/doedit/$1';
