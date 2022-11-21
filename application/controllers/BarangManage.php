@@ -13,7 +13,7 @@ class BarangManage extends CI_Controller {
 	public function index()
 	{
 		$data['barang'] = $this->m_barang->ambil_data()->result(); 
-		$this->load->view('barang', $data);
+		$this->load->view('barang/barang', $data);
 	}
 
 	public function add()
@@ -64,10 +64,16 @@ class BarangManage extends CI_Controller {
 		}
 
 	}
+
+	public function goadd(){
+		global $JENISBARANG;
+		$staticdata['jenisbarang'] = $JENISBARANG;
+		$this->load->view('barang/barang_add', $staticdata);
+	}
 	
 	public function goedit($id){
 		$data['barang'] = $this->m_barang->ambil_data_satu($id)->row(); 
-		$this->load->view('barang_edit', $data);
+		$this->load->view('barang/barang_edit', $data);
 	}
 	
 	public function doedit($id) {
