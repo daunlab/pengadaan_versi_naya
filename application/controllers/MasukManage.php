@@ -12,6 +12,7 @@ class MasukManage extends CI_Controller {
 		$this->load->model('m_suplier');
 		$this->load->model('m_barang');
 		$this->load->model('m_masuk');
+		$this->load->model('m_masuk_detail');
 	}
 
 	public function index()
@@ -23,11 +24,7 @@ class MasukManage extends CI_Controller {
   public function goadd(){
 		global $JENISBARANG;
 		$information['suplier'] = $this->m_suplier->ambil_data()->result(); 
-		
-		
 		$information['barang'] = $this->m_barang->ambil_data()->result(); 
-		
-		var_dump($information);die;
 		$information['uniqueid'] = IdGenerator::generateId(true);
 		$information['jenisbarang'] = $JENISBARANG;
 		$this->load->view('masuk/masuk_add', $information);
@@ -36,28 +33,61 @@ class MasukManage extends CI_Controller {
 	public function doadd(){
 		$var = $this->input->post();
 		
-		$idbarang = $var["idbarang"];
-		$namabarang = $var["namabarang"];
-		$jenisbarang = $var["jenisbarang"];
-		$harga= $var["harga"];
-		$stok= $var["stok"];
-		$satuan= $var["satuan"];
+		// echo "<pre>";
+		// var_dump($var);
+		// echo "</pre>";
+		// die;
+		
+		$masuk_barang = $var['masuk_barang'];
+		$masuk_barang_hrg = $var['masuk_barang_hrg'];
+		$masuk_barang_jml = $var['masuk_barang_jml'];
+		
+		
+		/**
+     * Transaksi
+     */
+		$id = $var["id"];
+		$id_suplier = $var["id_suplier"];
+		$keterangan = $var["keterangan"];
+		$tanggal= $var["tanggal"];
 		
 		$data = array(
-			'id' => $idbarang,
-			'nama' => $namabarang,
-			'jenis' => $jenisbarang,
-			'harga' => $harga,
-			'stok' => $stok,
-			'satuan' => $satuan,
+			'id' => $id,
+			'id_suplier' => $id_suplier,
+			'keterangan' => $keterangan,
+			'tanggal' => $tanggal,
 		);
 		
-		$status = $this->m_barang->input_data($data, 'barang');
+		$status = $this->m_masuk->input_data($data);
 		
+		/**
+     * detail
+     */
 		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */
+      
+      foreach ($masuk_barang as $k => $v) {
+        
+        $id = IdGenerator::generateId(false);
+        $id_masuk = $data['id'];
+        $id_barang = $v;
+        $harga = $masuk_barang_hrg[$k];
+        $jumlah = $masuk_barang_jml[$k];
+        
+        $detBar = array(
+          'id' => $id,
+          'id_masuk' => $id_masuk,
+          'id_barang' => $id_barang,
+          'harga' => $harga,
+          'jumlah' => $jumlah,
+        );
+        
+        $this->m_masuk_detail->input_data($detBar); 
+        
+      }
+      
 			header('location:./');
 		} else {
 			/**
