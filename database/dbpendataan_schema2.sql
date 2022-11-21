@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `barang`;
 CREATE TABLE `barang` (
-  `id` char(20) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `id` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
   `nama` varchar(50) CHARACTER SET latin1 NOT NULL,
   `satuan` varchar(50) CHARACTER SET latin1 NOT NULL DEFAULT 'buah',
   `jenis` char(2) CHARACTER SET latin1 NOT NULL DEFAULT '' COMMENT 'informasi barang dengan kode: JI = jadi atau MH = Mentah',
@@ -46,8 +46,8 @@ CREATE TABLE `barang` (
 
 DROP TABLE IF EXISTS `keluar`;
 CREATE TABLE `keluar` (
-  `id` char(25) CHARACTER SET latin1 NOT NULL DEFAULT '-',
-  `id_pembeli` char(20) CHARACTER SET latin1 NOT NULL DEFAULT '01',
+  `id` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '-',
+  `id_pembeli` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '01',
   `keterangan` text,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -61,8 +61,8 @@ CREATE TABLE `keluar` (
 DROP TABLE IF EXISTS `keluar_detail`;
 CREATE TABLE `keluar_detail` (
   `id` char(45) NOT NULL,
-  `id_keluar` char(25) DEFAULT NULL,
-  `id_barang` char(20) NOT NULL,
+  `id_keluar` char(45) DEFAULT NULL,
+  `id_barang` char(45) NOT NULL,
   `harga` int(10) UNSIGNED DEFAULT '0',
   `jumlah` smallint(5) UNSIGNED DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='merupakan tabel detail dari table keluar. dengan isi daftar barang yg keluar (jual)';
@@ -87,8 +87,8 @@ CREATE TABLE `login` (
 
 DROP TABLE IF EXISTS `masuk`;
 CREATE TABLE `masuk` (
-  `id` char(25) CHARACTER SET latin1 NOT NULL DEFAULT '-',
-  `id_suplier` char(20) CHARACTER SET latin1 NOT NULL DEFAULT '01',
+  `id` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '-',
+  `id_suplier` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '01',
   `keterangan` text,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -102,8 +102,8 @@ CREATE TABLE `masuk` (
 DROP TABLE IF EXISTS `masuk_detail`;
 CREATE TABLE `masuk_detail` (
   `id` char(45) NOT NULL,
-  `id_masuk` char(25) DEFAULT NULL,
-  `id_barang` char(20) NOT NULL,
+  `id_masuk` char(45) DEFAULT NULL,
+  `id_barang` char(45) NOT NULL,
   `harga` int(10) UNSIGNED DEFAULT '0',
   `jumlah` smallint(5) UNSIGNED DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='merupakan tabel detail dari table keluar. dengan isi daftar barang yg keluar (jual)' ROW_FORMAT=DYNAMIC;
@@ -116,7 +116,7 @@ CREATE TABLE `masuk_detail` (
 
 DROP TABLE IF EXISTS `pembeli`;
 CREATE TABLE `pembeli` (
-  `id` char(20) NOT NULL DEFAULT '',
+  `id` char(45) NOT NULL DEFAULT '',
   `nama` varchar(50) NOT NULL,
   `gender` char(2) NOT NULL DEFAULT 'N' COMMENT 'L = laki2x, P = perempuan, N=tidak disebut',
   `alamat` text,
@@ -131,7 +131,7 @@ CREATE TABLE `pembeli` (
 
 DROP TABLE IF EXISTS `penyuplai`;
 CREATE TABLE `penyuplai` (
-  `id` char(20) NOT NULL DEFAULT '',
+  `id` char(45) NOT NULL DEFAULT '',
   `nama` varchar(50) NOT NULL,
   `nama_perusahaan` varchar(150) DEFAULT NULL,
   `alamat` text,
@@ -146,7 +146,7 @@ CREATE TABLE `penyuplai` (
 
 DROP TABLE IF EXISTS `perubahan_barang`;
 CREATE TABLE `perubahan_barang` (
-  `id` char(25) NOT NULL DEFAULT '-',
+  `id` char(45) NOT NULL DEFAULT '-',
   `keterangan` text,
   `tanggal` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -174,8 +174,8 @@ CREATE TABLE `perubahan_barang_jadi` (
 DROP TABLE IF EXISTS `perubahan_barang_mentah`;
 CREATE TABLE `perubahan_barang_mentah` (
   `id` char(45) NOT NULL DEFAULT '-',
-  `id_perubahan` char(25) DEFAULT NULL,
-  `id_barang` char(20) DEFAULT NULL,
+  `id_perubahan` char(45) DEFAULT NULL,
+  `id_barang` char(45) DEFAULT NULL,
   `jumlah` mediumint(8) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
@@ -188,8 +188,8 @@ CREATE TABLE `perubahan_barang_mentah` (
 DROP TABLE IF EXISTS `perubahan_barang_petugas`;
 CREATE TABLE `perubahan_barang_petugas` (
   `id` char(45) NOT NULL DEFAULT '-',
-  `id_perubahan` char(25) DEFAULT NULL,
-  `id_petugas` char(20) DEFAULT NULL
+  `id_perubahan` char(45) DEFAULT NULL,
+  `id_petugas` char(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -200,7 +200,7 @@ CREATE TABLE `perubahan_barang_petugas` (
 
 DROP TABLE IF EXISTS `petugas`;
 CREATE TABLE `petugas` (
-  `id` char(20) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `id` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
   `nama` varchar(50) CHARACTER SET latin1 NOT NULL,
   `alamat` tinytext CHARACTER SET latin1 NOT NULL,
   `no_telp` varchar(20) CHARACTER SET latin1 NOT NULL DEFAULT '',
