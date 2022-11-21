@@ -33,17 +33,17 @@
                     </div>
                     
                     <div class="card-body">
-                        <form action="<?= base_url('index.php/barang/'.$barang->idbarang.'/hitedit') ?>" method="POST" >
+                        <form action="<?= base_url('index.php/barang/hittambah') ?>" method="POST" >
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="idbarang" type="text" value="<?= $barang->idbarang ?>" placeholder="Input Id Barang">
+                                        <input class="form-control" id="inputFirstName" name="idbarang" type="text" value="" placeholder="Input Id Barang">
                                         <label for="inputFirstName">Id Barang</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="namabarang" type="text" value="<?= $barang->namabarang ?>" placeholder="Input Nama Barang">
+                                        <input class="form-control" id="inputLastName" name="namabarang" type="text" value="" placeholder="Input Nama Barang">
                                         <label for="inputLastName">Nama Barang</label>
                                     </div>
                                 </div>
@@ -51,29 +51,21 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="harga" type="text" value="<?= $barang->harga ?>" placeholder="Input Harga Barang">
+                                        <input class="form-control" id="inputFirstName" name="harga" type="text" value="" placeholder="Input Harga Barang">
                                         <label for="inputFirstName">Harga Barang</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="stok" type="text" value="<?= $barang->stok ?>" placeholder="Input Stok Barang">
+                                        <input class="form-control" id="inputLastName" name="stok" type="text" value="" placeholder="Input Stok Barang">
                                         <label for="inputLastName">Stok</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-4 mb-0">
                                 <div class="d-grid">
-                                  <input class="btn btn-primary btn-block" type='submit' value='Ubah'>
-                                  <a href="javascript:formSubmit('<?= $barang->idbarang ?>');" class="btn btn-danger btn-block">Hapus</a>
                                 </div>
                             </div>
-                        </form>
-                        
-                
-                        <form id="formdel_<?= $barang->idbarang ?>" action='<?= base_url('index.php/barang/'.$barang->idbarang.'/hitremove')?>' method='POST'>
-                            <input type='hidden' name='aksi' value="delete" >
-                            <input type='hidden' name='idbarang' value="<?= $barang->idbarang ?>" >
                         </form>
                     </div>
                     
