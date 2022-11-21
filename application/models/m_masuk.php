@@ -15,10 +15,32 @@ class M_masuk extends CI_Model{
 	} 
 
     function ambil_data_satu($id){ 
-	$limit = 1;
-	$offset = 0;
-	return $this->db->get_where($this->tableName, array('id' => $id), $limit, $offset); 
+			$limit = 1;
+			$offset = 0;
+			return $this->db->get_where($this->tableName, array('id' => $id), $limit, $offset); 
     }
+  
+  function ambil_data_detail($id) {
+    $limit = 1;
+    $limit = 0;
+    // return $this->db->get_where($this->tableName, array('id' => $id), $limit, $offset); 
+    
+    $this->db->select('m.*, b.nama AS `nama_barang`, md.jumlah, md.harga, p.nama AS `nama_suplier`, p.nama_perusahaan');
+		$this->db->from('masuk_detail md');
+		$this->db->join('barang b', 'b.id = md.id_barang');
+		$this->db->join('masuk m', 'm.id = md.id_masuk');
+		$this->db->join('penyuplai p', 'p.id = m.id_suplier');
+		// $this->db->get();
+		
+		// var_dump($this->db->last_query());
+		// return  "heyy";
+		// return $this->db->last_query();
+		// die;
+		
+		return $this->db->get();
+    
+  }
+    
 	function input_data($data){ 
 	
 		/**

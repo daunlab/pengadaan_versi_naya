@@ -63,6 +63,7 @@
                                                     <input type='hidden' name='aksi' value="delete" >
                                                     <input type='hidden' name='id' value="<?= $i->id ?>" >
                                                 </form>
+                                                <button class='btn btn-info btn-sm' type="button" onclick="showDetail('<?= $i->id ?>')">Info</button>
                                                 <a href="<?= base_url('index.php/masuk/'.$i->id.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
                                                 <a href="javascript:formSubmit('<?= $i->id ?>');" class="btn btn-warning btn-sm">Hapus</a>
                                                 </td>
@@ -76,36 +77,38 @@
                     </div>
 
                     <!-- The Modal -->
-                    <div class="modal fade" id="myModal">
+                    <div class="modal fade" id="detailModal">
                     <div class="modal-dialog">
                     <div class="modal-content">
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                    <h4 class="modal-title">Tambah Barang</h4>
+                    <h4 class="modal-title">Detail Transaksi</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
               
                     <!-- Modal body -->
-                    <form method="post" action="<?php echo base_url("index.php/hitinsertbrgmasuk")?>">
+                    
                     <div class="modal-body">
-                    <input type="text" name="id_masuk" placeholder="id_masuk" class="form-control">
-                    <br/>
-                    <input type="text" name="idbarang" placeholder="idbarang" class="form-control">
-                    <br>
-                    <input type="text" name="nama_konsumen" placeholder="nama_konsumen" class="form-control">
-                    <br>
-                    <input type="text" name="nama_barang" placeholder="nama_barang" class="form-control">
-                    <br>
-                    <input type="text" name="jumlah" placeholder="jumlah" class="form-control">
-                    <br>
-                    <input type="text" name="harga" placeholder="harga" class="form-control">
-                    <br>
-                    <input type="text" name="tanggal" placeholder="tanggal" class="form-control">
-                    <br>
-                    <button type="submit" class="btn btn-primary" name="addnewbarang">submit</button>
+                      <div>
+                        <h5>Transaksi</h5>
+                        <ul>
+                          <li>Kode Transaksi : <span id='id_trx'></span></li>
+                          <li>Nama Suplier : <span id='suplier_nama'></span> dari Perusahaan : <span id='suplier_perusahaan'></span></li>
+                          <li>Keterangan : <span id='keterangan_trx'></li>
+                          <li>Tanggal : <span id='tanggal_trx'></li>
+                        </ul>
+                        <hr/>
+                        <h5>Daftar Barang</h5>
+                        <table id='det_brg_trx' class='table'>
+                          <tr>
+                            <td>Nama Barang</td>
+                            <td>Harga</td>
+                            <td>Jumlah Barang Masuk</td>
+                          </tr>
+                        </table>
+                      </div>
                     </div>
-                    </form>
 
                 </main>
                 <footer class="py-4 bg-light mt-auto">
@@ -117,6 +120,44 @@
 
             function formSubmit(id) {
                 $('form#formdel_'+id).submit();
+            }
+            
+            function showDetail(id) {
+              // alert(id)
+              
+              
+              // url: "http://localhost:82/index.php/api/masuk/"+id+"/getdetail",
+              $.ajax({
+                url: "<?= base_url() ?>index.php/api/masuk/"+id+"/getdetail",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+                    console.log(res);
+                    val = res[0];
+                    
+                    $("#id_trx").html(val.id)
+                    $("#suplier_nama").html(val.nama_suplier)
+                    $("#suplier_perusahaan").html(val.nama_perusahaan)
+                    $("#keterangan_trx").html(val.keterangan)
+                    $("#tanggal_trx").html(val.tanggal)
+                    
+                    var detailBrg = "";
+                    for (let index = 0; index < res.length; index++) {
+                      const el = res[index];
+                      
+                      // console.log(el);
+                      detailBrg = detailBrg + "<tr>" + "<td>"+el.nama_barang+"</td>" + "<td>"+el.harga+"</td>" + "<td>"+el.jumlah+"</td>" + "</tr>";
+                      
+                    }
+                    
+                    $("#det_brg_trx").html("<tr><td>Nama Barang</td><td>Harga</td><td>Jumlah Barang Masuk</td></tr>"+detailBrg);
+                    
+                    
+                },
+            });
+              
+              $('#detailModal').modal('toggle');
+              
             }
         </script>
         

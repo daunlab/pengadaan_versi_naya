@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
  * API
  */
 $route['api/barang/(:any)/get'] = 'apibarang/get/$1';
+$route['api/masuk/(:any)/getdetail'] = 'apimasuk/getdetail/$1';
 
 /**
  * master barang

@@ -175,7 +175,7 @@
             // alert(idbarang);
             
             $.ajax({
-                url: "http://localhost:82/index.php/api/barang/"+idbarang+"/get",
+                url: "<?= base_url() ?>index.php/api/barang/"+idbarang+"/get",
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
@@ -212,7 +212,7 @@
             
             
             $.ajax({
-                url: "http://localhost:82/index.php/api/barang/"+idbarang+"/get",
+                url: "<?= base_url() ?>index.php/api/barang/"+idbarang+"/get",
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
