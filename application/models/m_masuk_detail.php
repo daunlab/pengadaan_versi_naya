@@ -1,11 +1,11 @@
 <?php 
-class M_masuk extends CI_Model{ 
+class M_masuk_detail extends CI_Model{ 
 
 	private $tableName;
 	
 	function __construct(){ 
 		parent::__construct(); 
-		$this->tableName = 'masuk';
+		$this->tableName = 'masuk_detail';
 		
 		$this->load->model('m_masuk');
 	}

@@ -54,6 +54,11 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 /**
+ * API
+ */
+$route['api/barang/(:any)/get'] = 'apibarang/get/$1';
+
+/**
  * master barang
  */
 $route['barang'] = 'barangmanage';
