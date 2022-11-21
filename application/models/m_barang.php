@@ -4,6 +4,7 @@ class M_barang extends CI_Model{
 	private $tableName;
 	
 	function __construct(){
+		parent::__construct(); 
 		$this->tableName = 'barang';
 	}
 	

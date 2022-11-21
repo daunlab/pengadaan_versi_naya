@@ -29,11 +29,11 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Ubah</h1>
+                        <h1 class="mt-4">Tambah Barang Masuk</h1>
                     </div>
                     
                     <div class="card-body">
-                        <form action="<?= base_url('index.php/barang/hittambah') ?>" method="POST" >
+                        <form action="<?= base_url('index.php/masuk/hittambah') ?>" method="POST" >
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">                                    
@@ -44,15 +44,13 @@
                             </div>
                             <div class="row mb-3">
                             <div class="col-md-6">
-                            <?php
-                              var_dump($suplier);
-                            ?>
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <select name='jenisbarang' class="form-select" aria-label="Default select example">
+                                        <select name='id_suplier' class="form-select" aria-label="Default select example">
                                           <option selected>Pilih Penyuplai</option>
                                           <?php
                                             foreach ($suplier as $key => $value) {
-                                                echo "<option value='".$value['id']."'>".$value['nama']." ".$value['nama_perusahaan']."</option>";
+                                              
+                                                echo "<option value='".$value->id."'>".$value->nama." | <span class='text-bold'>".$value->nama_perusahaan."</span></option>";
                                             }
                                           ?>
                                         </select>

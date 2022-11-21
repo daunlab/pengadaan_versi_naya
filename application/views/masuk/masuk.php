@@ -45,11 +45,8 @@
                                     <thead>
                                         <tr>
                                             <th>ID Masuk</th>
-                                            <th>ID Barang</th>
-                                            <th>Nama konsumen</th>
-                                            <th>Nama barang</th>
-                                            <th>jumlah </th>
-                                            <th>Harga </th>
+                                            <th>ID Suplier</th>
+                                            <th>Keterangan</th>
                                             <th>Tanggal </th>
                                             <th class="text-center">aksi</th>
                                         </tr>
@@ -57,20 +54,17 @@
                                     <tbody>
                                     <?php foreach ($masuk as $i) { ?>
                                         <tr>
-                                            <td><?= $i->id_masuk  ?></td>
-                                            <td><?= $i->idbarang ?></td>
-                                            <td><?= $i->nama_konsumen ?></td>
-                                            <td><?= $i->nama_barang ?></td>
-                                            <td><?= $i->jumlah ?></td>
-                                            <th><?= $i->harga ?></th>
+                                            <td><?= $i->id  ?></td>
+                                            <td><?= $i->id_suplier ?></td>
+                                            <td><?= $i->keterangan ?></td>
                                             <th><?= $i->tanggal ?></th>
                                             <td class="text-center">
-                                                <form id="formdel_<?= $i->idbarang ?>" action='<?= base_url('index.php/masuk/'.$i->idbarang.'/hitremove')?>' method='POST'>
+                                                <form id="formdel_<?= $i->id ?>" action='<?= base_url('index.php/masuk/'.$i->id.'/hitremove')?>' method='POST'>
                                                     <input type='hidden' name='aksi' value="delete" >
-                                                    <input type='hidden' name='idbarang' value="<?= $i->idbarang ?>" >
+                                                    <input type='hidden' name='id' value="<?= $i->id ?>" >
                                                 </form>
-                                                <a href="<?= base_url('index.php/masuk/'.$i->idbarang.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
-                                                <a href="javascript:formSubmit('<?= $i->idbarang ?>');" class="btn btn-warning btn-sm">Hapus</a>
+                                                <a href="<?= base_url('index.php/masuk/'.$i->id.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
+                                                <a href="javascript:formSubmit('<?= $i->id ?>');" class="btn btn-warning btn-sm">Hapus</a>
                                                 </td>
                                         </tr>
                                         <?php } ?>

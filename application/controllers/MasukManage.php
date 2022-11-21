@@ -23,11 +23,7 @@ class MasukManage extends CI_Controller {
   public function goadd(){
 		global $JENISBARANG;
 		$information['suplier'] = $this->m_suplier->ambil_data()->result(); 
-		
-		
 		$information['barang'] = $this->m_barang->ambil_data()->result(); 
-		
-		var_dump($information);die;
 		$information['uniqueid'] = IdGenerator::generateId(true);
 		$information['jenisbarang'] = $JENISBARANG;
 		$this->load->view('masuk/masuk_add', $information);
@@ -36,23 +32,19 @@ class MasukManage extends CI_Controller {
 	public function doadd(){
 		$var = $this->input->post();
 		
-		$idbarang = $var["idbarang"];
-		$namabarang = $var["namabarang"];
-		$jenisbarang = $var["jenisbarang"];
-		$harga= $var["harga"];
-		$stok= $var["stok"];
-		$satuan= $var["satuan"];
+		$id = $var["id"];
+		$id_suplier = $var["id_suplier"];
+		$keterangan = $var["keterangan"];
+		$tanggal= $var["tanggal"];
 		
 		$data = array(
-			'id' => $idbarang,
-			'nama' => $namabarang,
-			'jenis' => $jenisbarang,
-			'harga' => $harga,
-			'stok' => $stok,
-			'satuan' => $satuan,
+			'id' => $id,
+			'id_suplier' => $id_suplier,
+			'keterangan' => $keterangan,
+			'tanggal' => $tanggal,
 		);
 		
-		$status = $this->m_barang->input_data($data, 'barang');
+		$status = $this->m_masuk->input_data($data);
 		
 		if($status) {
 			/**

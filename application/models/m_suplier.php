@@ -4,14 +4,12 @@ class M_suplier extends CI_Model{
 	private $tableName;
 	
 	function __construct(){
+    parent::__construct(); 
 		$this->tableName = 'penyuplai';
 	}
 	
 	function ambil_data(){ 
-		// return $this->db->get($this->tableName); 
-		print_r($this->db->get("penyuplai")->result());
-		print_r($this->db->last_query());   
-		die;
+		return $this->db->get($this->tableName); 
 	}
 	function ambil_data_satu($id){ 
 		$limit = 1;
