@@ -35,35 +35,58 @@
                     <div class="card-body">
                         <form action="<?= base_url('index.php/barang/hittambah') ?>" method="POST" >
                             <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="idbarang" type="text" value="" placeholder="Input Id Barang">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3 mb-md-0">                                    
+                                        <input class="form-control" id="inputFirstName" name="idbarang" type="text" value="<?= $uniqueid ?>" placeholder="Input Id Barang" title="otomatis di buat" readonly="readonly">
                                         <label for="inputFirstName">Id Barang</label>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input class="form-control" id="inputLastName" name="namabarang" type="text" value="" placeholder="Input Nama Barang">
                                         <label for="inputLastName">Nama Barang</label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <select name='jenisbarang' class="form-select" aria-label="Default select example">
+                                          <option selected>Pilih Jenis Barang</option>
+                                          <?php
+                                            foreach ($jenisbarang as $key => $value) {
+                                                echo "<option value='$key'>$value</option>";
+                                            }
+                                          ?>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" name="harga" type="text" value="" placeholder="Input Harga Barang">
-                                        <label for="inputFirstName">Harga Barang</label>
+                                        <input class="form-control" id="inputHargaBarang" name="harga" type="text" value="" placeholder="Input Harga Barang">
+                                        <label for="inputHargaBarang">Harga Barang</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="stok" type="text" value="" placeholder="Input Stok Barang">
-                                        <label for="inputLastName">Stok</label>
+                                        <input class="form-control" id="inputStok" name="stok" type="text" value="" placeholder="Input Stok Barang">
+                                        <label for="inputStok">Stok</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputSatuanBarang" name="satuan" type="text" value="" placeholder="Input Satuan barang" title="contoh, buah, biji, jumlah, dan lain2x">
+                                        <label for="inputSatuanBarang">Satuan Barang</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-4 mb-0">
                                 <div class="d-grid">
+                                    <input type="submit" class="btn btn-primary" value="Tambah">
                                 </div>
                             </div>
                         </form>
