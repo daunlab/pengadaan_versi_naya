@@ -6,21 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - Deran Kusen</title>
+        <title>Barang - Deran Kusen</title>
         <?php $this->load->view('navigator/topscript'); ?>
     </head>
     <body class="sb-nav-fixed">
         
         <!-- start top nav -->
 
-        <?php $this->load->view('navigator/topnav.php'); ?>
+        <?php $this->load->view('navigator/topnav'); ?>
 
         <!-- end top nav -->
 
         <div id="layoutSidenav">
             
             <!-- start navigator -->
-                <?php $this->load->view('navigator/mainnav.php'); ?>
+                <?php $this->load->view('navigator/mainnav'); ?>
             <!-- send navigator -->
 
 
@@ -40,9 +40,7 @@
                             <div class="card-header">
                             <div class="container">
                             <div class="container mt-3">
-                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"> -->
                             <a class="btn btn-primary" href="<?= base_url('index.php/barang/tambah'); ?>">Tambah Barang yang Dijual</a>
-                            <!-- </button> -->
                         </div>
                         <div class="card-body">
                                 <table id="datatablesSimple">
@@ -117,18 +115,18 @@
 
                 </main>
                 <footer class="py-4 bg-light mt-auto">
-                    <?php $this->load->view('pages/footer.php'); ?>
+                    <?php $this->load->view('pages/footer'); ?>
                 </footer>
             </div>
         </div>
         
         <script>
-            function formSubmit(id) {
-                $('form#formdel_'+id).submit();
-            }
+            // function formSubmit(id) {
+            //     $('form#formdel_'+id).submit();
+            // }
         </script>
         
-        <?php $this->load->view('navigator/bottomscript.php'); ?>
+        <?php $this->load->view('navigator/bottomscript'); ?>
 
     </body>
 </html>

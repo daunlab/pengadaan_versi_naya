@@ -18,8 +18,8 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="<?php echo base_url('index.php/barang');?>">   Daftar Barang</a>
-                                    <a class="nav-link" href="<?php echo base_url('index.php/masuk-barang');?>">Daftar Barang Masuk</a>
-                                    <a class="nav-link" href="<?php echo base_url('index.php/keluar-barang');?>">Daftar Barang Keluar</a>
+                                    <a class="nav-link" href="<?php echo base_url('index.php/masuk');?>">Daftar Barang Masuk</a>
+                                    <a class="nav-link" href="<?php echo base_url('index.php/keluar');?>">Daftar Barang Keluar</a>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Addons</div>

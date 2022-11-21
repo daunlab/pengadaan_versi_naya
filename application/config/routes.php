@@ -53,6 +53,9 @@ $route['default_controller'] = 'barangmanage';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/**
+ * master barang
+ */
 $route['barang'] = 'barangmanage';
 $route['barang/tambah'] = 'barangmanage/goadd';
 $route['barang/hittambah'] = 'barangmanage/doadd';
@@ -61,17 +64,33 @@ $route['barang/(:any)/edit'] = 'barangmanage/goedit/$1';
 $route['barang/(:any)/hitedit'] = 'barangmanage/doedit/$1';
 $route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
 
-$route['masuk-barang'] = 'barangmanage/masuk';
+/**
+ * transaksi barang masuk
+ */
+$route['masuk'] = 'masukmanage';
+$route['masuk/tambah'] = 'masukmanage/goadd';
+$route['masuk/hittambah'] = 'masukmanage/doadd';
 $route['hitinsertbrgmasuk'] ='barangmanage/tambahdatamasuk/';
 $route['masuk/(:any)/edit'] = 'barangmanage/yuedit/$1';
 $route['masuk/(:any)/hitedit'] = 'barangmanage/diedit/$1';
 $route['masuk/(:any)/hitremove'] = 'barangmanage/diremove/$1';
 
-$route['keluar-barang'] = 'barangmanage/keluar';
+/**
+ * transaksi barang keluar
+ */
+$route['keluar'] = 'keluarmanage';
 $route['hitinsertbrgkeluar'] ='barangmanage/tambahdatakeluar/';
 $route['barang/(:any)/edit'] = 'barangmanage/goedit/$1';
 $route['barang/(:any)/hitedit'] = 'barangmanage/doedit/$1';
 $route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
+
+/**
+ * transaksi convert barang
+ */
+
+/**
+ * master suplier
+ */
 
 $route['hitlaporan'] ='barangmanage';
 
