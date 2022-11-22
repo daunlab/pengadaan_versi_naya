@@ -30,6 +30,8 @@ class M_masuk extends CI_Model{
 		$this->db->join('barang b', 'b.id = md.id_barang');
 		$this->db->join('masuk m', 'm.id = md.id_masuk');
 		$this->db->join('penyuplai p', 'p.id = m.id_suplier');
+		$this->db->where('m.id', $id);
+		
 		// $this->db->get();
 		
 		// var_dump($this->db->last_query());

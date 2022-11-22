@@ -123,16 +123,12 @@
             }
             
             function showDetail(id) {
-              // alert(id)
-              
-              
-              // url: "http://localhost:82/index.php/api/masuk/"+id+"/getdetail",
               $.ajax({
                 url: "<?= base_url() ?>index.php/api/masuk/"+id+"/getdetail",
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
-                    console.log(res);
+                    
                     val = res[0];
                     
                     $("#id_trx").html(val.id)
