@@ -33,7 +33,7 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">- JL.Petaruman, Cihampelas.</li>
                         </ol>
-                            <li class="breadcrumb-item active">DAFTAR BARANG YANG DI JUAL DI DERAN JAYA KUSEN</li>
+                            <li class="breadcrumb-item active">DAFTAR BARANG</li>
                         <ol>
                             
                         <div class="card mb-4">

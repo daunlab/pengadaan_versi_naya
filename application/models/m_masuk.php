@@ -60,17 +60,8 @@ class M_masuk extends CI_Model{
 			return false;
 		}
 	} 
-<<<<<<< HEAD
-	function hapus_data($id){ 
-		$this->db->where('masuk'); 
-		return $this->db->delete($this->masuk, array('idbarang' => $jumlah));
-	} 
-	function cek_login($table,$where){ 
-		return $this->db->get_where($table,$where); 
-=======
 	function hapus_data($where){ 
 		$this->db->where($where); 
 		$this->db->delete($this->tableName); 
->>>>>>> 540d84c45872b5c99b1438c2c14078bbbdab1dfe
 	} 
 }
