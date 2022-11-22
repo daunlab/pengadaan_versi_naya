@@ -58,6 +58,7 @@ $route['translate_uri_dashes'] = FALSE;
  */
 $route['api/barang/(:any)/get'] = 'apibarang/get/$1';
 $route['api/masuk/(:any)/getdetail'] = 'apimasuk/getdetail/$1';
+$route['api/keluar/(:any)/getdetail'] = 'apikeluar/getdetail/$1';
 
 /**
  * master barang
@@ -76,7 +77,6 @@ $route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
 $route['masuk'] = 'masukmanage';
 $route['masuk/tambah'] = 'masukmanage/goadd';
 $route['masuk/hittambah'] = 'masukmanage/doadd';
-$route['hitinsertbrgmasuk'] ='masukmanage/tambahdatamasuk/';
 $route['masuk/(:any)/edit'] = 'masukmanage/goedit/$1';
 $route['masuk/(:any)/hitedit'] = 'masukmanage/doedit/$1';
 $route['masuk/(:any)/hitremove'] = 'masukmanage/doremove/$1';
@@ -85,10 +85,11 @@ $route['masuk/(:any)/hitremove'] = 'masukmanage/doremove/$1';
  * transaksi barang keluar
  */
 $route['keluar'] = 'keluarmanage';
-$route['hitinsertbrgkeluar'] ='barangmanage/tambahdatakeluar/';
-$route['barang/(:any)/edit'] = 'barangmanage/goedit/$1';
-$route['barang/(:any)/hitedit'] = 'barangmanage/doedit/$1';
-$route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
+$route['keluar/tambah'] = 'keluarmanage/goadd';
+$route['keluar/hittambah'] = 'keluarmanage/doadd';
+$route['keluar/(:any)/edit'] = 'keluarmanage/goedit/$1';
+$route['keluar/(:any)/hitedit'] = 'keluarmanage/doedit/$1';
+$route['keluar/(:any)/hitremove'] = 'keluarmanage/doremove/$1';
 
 /**
  * transaksi convert barang

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Barang Masuk - Deran Kusen</title>
+        <title>Barang Keluar - Deran Kusen</title>
         <?php $this->load->view('navigator/topscript'); ?>
     </head>
     <body class="sb-nav-fixed">
@@ -29,28 +29,28 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Transaksi Barang Masuk</h1>
+                        <h1 class="mt-4">Transaksi Barang Keluar</h1>
                     </div>
                     
                     <div class="card-body">
-                        <form action="<?= base_url('index.php/masuk/hittambah') ?>" method="POST" >
+                        <form action="<?= base_url('index.php/keluar/hittambah') ?>" method="POST" >
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">                                    
-                                        <input class="form-control" id="Barang Masuk" name="id" type="text" value="<?= $uniqueid ?>" placeholder="Input Id Barang Masuk" title="otomatis di buat" readonly="readonly">
-                                        <label for="Barang Masuk">Id Barang Masuk</label>
+                                        <input class="form-control" id="Barang Keluar" name="id" type="text" value="<?= $uniqueid ?>" placeholder="Input Id Barang Keluar" title="otomatis di buat" readonly="readonly">
+                                        <label for="Barang Keluar">Id Barang Keluar</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
                             <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <select name='id_suplier' class="form-select" aria-label="Default select example">
-                                          <option selected>Pilih Penyuplai</option>
+                                        <select name='id_pembeli' class="form-select" aria-label="Default select example">
+                                          <option selected>Pilih Pembeli</option>
                                           <?php
-                                            foreach ($suplier as $key => $value) {
+                                            foreach ($pembeli as $key => $value) {
                                               
-                                                echo "<option value='".$value->id."'>".$value->nama." | <span class='text-bold'>".$value->nama_perusahaan."</span></option>";
+                                                echo "<option value='".$value->id."'>".$value->nama."</option>";
                                             }
                                           ?>
                                         </select>
@@ -75,19 +75,19 @@
                             </div>
                             
                             <hr/>
-                            <h5>Daftar Barang Masuk</h5>
+                            <h5>Daftar Barang Keluar</h5>
                             
                             <table id='list_barang' class="table">
                               <tr>
                                 <td>No</td>
                                 <td>Nama</td>
                                 <td>Harga</td>
-                                <td>Jumlah Barang Masuk</td>
+                                <td>Jumlah Barang Keluar</td>
                                 <td>Action</td>
                               </tr>
                             </table>
                             
-                            <button id='btn_add_barang' class='btn btn-success' type="button" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Barang Masuk</button>
+                            <button id='btn_add_barang' class='btn btn-success' type="button" data-bs-toggle="modal" data-bs-target="#myModal">Tambah Barang Keluar</button>
                             
                             
                             <div class="mt-4 mb-0">
@@ -112,7 +112,7 @@
 
         <!-- Modal Header -->
         <div class="modal-header">
-        <h4 class="modal-title">Tambah Barang Masuk</h4>
+        <h4 class="modal-title">Tambah Barang Keluar</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
   
@@ -196,7 +196,7 @@
                     
                     
                     
-                    $('#list_barang tr:last').after("<tr id=\"tr_brg_"+val.id+"\"><td>#<input type='hidden' name=masuk_barang[] value='"+val.id+"'></td><td>"+val.nama+"</td><td><input type='text' name='masuk_barang_hrg[]' value='"+val.harga+"'></td><td><input type='text' name='masuk_barang_jml[]' value='1'> <span class='text-muted'>stok saat ini: "+val.stok+"</span></td><td><button class='btn btn-danger btn-sm' type='button' onclick=\"dodeltr(\'"+val.id+"\')\">delete</button></td></tr>");
+                    $('#list_barang tr:last').after("<tr id=\"tr_brg_"+val.id+"\"><td>#<input type='hidden' name=keluar_barang[] value='"+val.id+"'></td><td>"+val.nama+"</td><td><input type='text' name='keluar_barang_hrg[]' value='"+val.harga+"'></td><td><input type='text' name='keluar_barang_jml[]' value='1'> <span class='text-muted'>stok saat ini: "+val.stok+"</span></td><td><button class='btn btn-danger btn-sm' type='button' onclick=\"dodeltr(\'"+val.id+"\')\">delete</button></td></tr>");
                     
                     
                 }
