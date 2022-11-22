@@ -169,6 +169,10 @@
             // $('#nama').value(nama);
           }
           
+          function dodeltr(id){
+            $('#tr_brg_'+id).remove();
+          }
+          
           function clickMy() {
             var selectBox = document.getElementById("id_suplier");
             var idbarang = selectBox.options[selectBox.selectedIndex].value;
@@ -192,7 +196,7 @@
                     
                     
                     
-                    $('#list_barang tr:last').after("<tr><td>#<input type='hidden' name=masuk_barang[] value='"+val.id+"'></td><td>"+val.nama+"</td><td><input type='text' name='masuk_barang_hrg[]' value='"+val.harga+"'></td><td><input type='text' name='masuk_barang_jml[]' value='1'> <span class='text-muted'>stok saat ini: "+val.stok+"</span></td><td><button class='btn btn-danger' type='button'>delete</button></td></tr>");
+                    $('#list_barang tr:last').after("<tr id=\"tr_brg_"+val.id+"\"><td>#<input type='hidden' name=masuk_barang[] value='"+val.id+"'></td><td>"+val.nama+"</td><td><input type='text' name='masuk_barang_hrg[]' value='"+val.harga+"'></td><td><input type='text' name='masuk_barang_jml[]' value='1'> <span class='text-muted'>stok saat ini: "+val.stok+"</span></td><td><button class='btn btn-danger btn-sm' type='button' onclick=\"dodeltr(\'"+val.id+"\')\">delete</button></td></tr>");
                     
                     
                 }

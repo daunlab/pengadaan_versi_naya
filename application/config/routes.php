@@ -76,10 +76,10 @@ $route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
 $route['masuk'] = 'masukmanage';
 $route['masuk/tambah'] = 'masukmanage/goadd';
 $route['masuk/hittambah'] = 'masukmanage/doadd';
-$route['hitinsertbrgmasuk'] ='barangmanage/tambahdatamasuk/';
-$route['masuk/(:any)/edit'] = 'barangmanage/yuedit/$1';
-$route['masuk/(:any)/hitedit'] = 'barangmanage/diedit/$1';
-$route['masuk/(:any)/hitremove'] = 'barangmanage/diremove/$1';
+$route['hitinsertbrgmasuk'] ='masukmanage/tambahdatamasuk/';
+$route['masuk/(:any)/edit'] = 'masukmanage/goedit/$1';
+$route['masuk/(:any)/hitedit'] = 'masukmanage/doedit/$1';
+$route['masuk/(:any)/hitremove'] = 'masukmanage/doremove/$1';
 
 /**
  * transaksi barang keluar

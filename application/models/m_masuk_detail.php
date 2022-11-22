@@ -42,4 +42,9 @@ class M_masuk_detail extends CI_Model{
 		$this->db->where($where); 
 		$this->db->delete($this->tableName); 
 	} 
+	
+	function delete_byidmasuk($id){
+		$this->db->where('id_masuk', $id);
+		$this->db->delete($this->tableName);
+	}
 }

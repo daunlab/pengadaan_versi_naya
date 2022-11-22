@@ -7,6 +7,7 @@ class M_masuk extends CI_Model{
 		parent::__construct(); 
 		$this->tableName = 'masuk';
 		
+		$this->load->model('m_masuk_detail');
 		$this->load->model('m_masuk');
 	}
 	
@@ -25,7 +26,7 @@ class M_masuk extends CI_Model{
     $limit = 0;
     // return $this->db->get_where($this->tableName, array('id' => $id), $limit, $offset); 
     
-    $this->db->select('m.*, b.nama AS `nama_barang`, md.jumlah, md.harga, p.nama AS `nama_suplier`, p.nama_perusahaan');
+    $this->db->select('m.*, b.id AS `id_barang`, b.nama AS `nama_barang`, md.id AS `id_detail`, md.jumlah, md.harga, p.id AS `id_suplier` , p.nama AS `nama_suplier`, p.nama_perusahaan');
 		$this->db->from('masuk_detail md');
 		$this->db->join('barang b', 'b.id = md.id_barang');
 		$this->db->join('masuk m', 'm.id = md.id_masuk');
@@ -66,4 +67,14 @@ class M_masuk extends CI_Model{
 		$this->db->where($where); 
 		$this->db->delete($this->tableName); 
 	} 
+	
+	function force_delete($id){
+		$this->m_masuk_detail->delete_byidmasuk($id);
+		$this->db->where("id", $id);
+		if($this->db->delete($this->tableName)){
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
