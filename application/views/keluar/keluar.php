@@ -29,7 +29,7 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Daftar Barang Masuk</h1>
+                        <h1 class="mt-4">Daftar Barang Keluar</h1>
                          <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">- Bahan Baku Yang Dibeli</li>
                         </ol>
@@ -38,33 +38,33 @@
                             <div class="card-header">
                             <div class="container">
                             <div class="container mt-3">
-                            <a class="btn btn-primary" href="<?= base_url('index.php/masuk/tambah'); ?>">Tambah Barang Masuk</a>
+                            <a class="btn btn-primary" href="<?= base_url('index.php/keluar/tambah'); ?>">Tambah Barang Keluar</a>
                         </div>
                         <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>ID Masuk</th>
-                                            <th>ID Suplier</th>
+                                            <th>ID Keluar</th>
+                                            <th>ID Pembeli</th>
                                             <th>Keterangan</th>
                                             <th>Tanggal </th>
                                             <th class="text-center">aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($masuk as $i) { ?>
+                                    <?php foreach ($keluar as $i) { ?>
                                         <tr>
                                             <td><?= $i->id  ?></td>
-                                            <td><?= $i->id_suplier ?></td>
+                                            <td><?= $i->id_pembeli ?></td>
                                             <td><?= $i->keterangan ?></td>
                                             <th><?= $i->tanggal ?></th>
                                             <td class="text-center">
-                                                <form id="formdel_<?= $i->id ?>" action='<?= base_url('index.php/masuk/'.$i->id.'/hitremove')?>' method='POST'>
+                                                <form id="formdel_<?= $i->id ?>" action='<?= base_url('index.php/keluar/'.$i->id.'/hitremove')?>' method='POST'>
                                                     <input type='hidden' name='aksi' value="delete" >
                                                     <input type='hidden' name='id' value="<?= $i->id ?>" >
                                                 </form>
                                                 <button class='btn btn-info btn-sm' type="button" onclick="showDetail('<?= $i->id ?>')">Info</button>
-                                                <a href="<?= base_url('index.php/masuk/'.$i->id.'/edit') ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="<?= base_url('index.php/keluar/'.$i->id.'/edit') ?>" class="btn btn-warning btn-sm">Edit</a>
                                                 <a href="javascript:formSubmit('<?= $i->id ?>');" class="btn btn-danger btn-sm">Hapus</a>
                                                 </td>
                                         </tr>
@@ -94,7 +94,7 @@
                         <h5>Transaksi</h5>
                         <ul>
                           <li>Kode Transaksi : <span id='id_trx'></span></li>
-                          <li>Nama Suplier : <span id='suplier_nama'></span> dari Perusahaan : <span id='suplier_perusahaan'></span></li>
+                          <li>Nama Pembeli : <span id='pembeli_nama'></span></li>
                           <li>Keterangan : <span id='keterangan_trx'></li>
                           <li>Tanggal : <span id='tanggal_trx'></li>
                         </ul>
@@ -104,7 +104,7 @@
                           <tr>
                             <td>Nama Barang</td>
                             <td>Harga</td>
-                            <td>Jumlah Barang Masuk</td>
+                            <td>Jumlah Barang Keluar</td>
                           </tr>
                         </table>
                       </div>
@@ -124,7 +124,7 @@
             
             function showDetail(id) {
               $.ajax({
-                url: "<?= base_url() ?>index.php/api/masuk/"+id+"/getdetail",
+                url: "<?= base_url() ?>index.php/api/keluar/"+id+"/getdetail",
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
@@ -132,8 +132,7 @@
                     val = res[0];
                     
                     $("#id_trx").html(val.id)
-                    $("#suplier_nama").html(val.nama_suplier)
-                    $("#suplier_perusahaan").html(val.nama_perusahaan)
+                    $("#pembeli_nama").html(val.nama_pembeli)
                     $("#keterangan_trx").html(val.keterangan)
                     $("#tanggal_trx").html(val.tanggal)
                     
@@ -146,7 +145,7 @@
                       
                     }
                     
-                    $("#det_brg_trx").html("<tr><td>Nama Barang</td><td>Harga</td><td>Jumlah Barang Masuk</td></tr>"+detailBrg);
+                    $("#det_brg_trx").html("<tr><td>Nama Barang</td><td>Harga</td><td>Jumlah Barang Keluar</td></tr>"+detailBrg);
                     
                     
                 },

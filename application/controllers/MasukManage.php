@@ -97,8 +97,13 @@ class MasukManage extends CI_Controller {
 	}
 	
   public function goedit($id){
-		$data['masuk'] = $this->m_masuk->ambil_data_satu($id)->row(); 
-		$this->load->view('masuk_edit', $data);
+    global $JENISBARANG;
+    $data['id_masuk'] = $id;
+    $data['suplier'] = $this->m_suplier->ambil_data()->result(); 
+		$data['barang'] = $this->m_barang->ambil_data()->result(); 
+		$data['jenisbarang'] = $JENISBARANG;
+		$data['masuk'] = $this->m_masuk->ambil_data_detail($id)->result(); 
+		$this->load->view('masuk/masuk_edit', $data);
 	}
 
 
@@ -138,11 +143,6 @@ class MasukManage extends CI_Controller {
 		}
 	}
 	
-	public function yuedit($id){
-		$data['masuk'] = $this->m_masuk->ambil_data_satu($id)->row(); 
-		$this->load->view('masuk_edit', $data);
-	}
-	
 	public function diedit($id) {
 	
 		$variable = $this->input->post();
@@ -178,18 +178,14 @@ class MasukManage extends CI_Controller {
 		}
 		
 	}
-	public function diremove($id){
-		
-		$variable = $this->input->post();
-		$idbarang = $variable["idbarang"];
-		
-		$status = $this->m_barang->delete_data($idbarang);
-		
+	public function doremove($id){		
+		$status = $this->m_masuk->force_delete($id);
+		var_dump($status);
 		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:'.base_url('/index.php/masuk'));
+			header('location:./../');
 		} else {
 			/**
 			 * todo add, conditional if failed

@@ -1,24 +1,25 @@
 <?php 
-class M_masuk_detail extends CI_Model{ 
+class M_keluar_detail extends CI_Model{ 
 
 	private $tableName;
 	
 	function __construct(){ 
 		parent::__construct(); 
-		$this->tableName = 'masuk_detail';
+		$this->tableName = 'keluar_detail';
 		
-		$this->load->model('m_masuk');
+		$this->load->model('m_keluar');
 	}
 	
 	function ambil_data(){ 
 		return $this->db->get($this->tableName); 
 	} 
 
-    function ambil_data_satu($id){ 
-	$limit = 1;
-	$offset = 0;
-	return $this->db->get_where($this->tableName, array('id' => $id), $limit, $offset); 
-    }
+  function ambil_data_satu($id){ 
+  	$limit = 1;
+  	$offset = 0;
+  	return $this->db->get_where($this->tableName, array('id' => $id), $limit, $offset); 
+  }
+	
 	function input_data($data){ 
 	
 		/**
@@ -43,8 +44,8 @@ class M_masuk_detail extends CI_Model{
 		$this->db->delete($this->tableName); 
 	} 
 	
-	function delete_byidmasuk($id){
-		$this->db->where('id_masuk', $id);
+	function delete_byidkeluar($id){
+		$this->db->where('id_keluar', $id);
 		$this->db->delete($this->tableName);
 	}
 }

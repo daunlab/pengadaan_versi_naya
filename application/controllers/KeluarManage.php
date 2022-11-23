@@ -7,10 +7,93 @@ use helper\IdGenerator;
 
 class KeluarManage extends CI_Controller {
 
-	public function keluar()
+  function __construct(){ 
+		parent::__construct(); 
+		$this->load->model('m_pembeli');
+		$this->load->model('m_barang');
+		$this->load->model('m_keluar');
+		$this->load->model('m_keluar_detail');
+	}
+
+	public function index()
 	{
 		$data['keluar'] = $this->m_keluar->ambil_data()->result();
-		$this->load->view('barangkeluar',$data);
+		$this->load->view('keluar/keluar',$data);
+	}
+	
+  public function goadd(){
+		global $JENISBARANG;
+		$information['pembeli'] = $this->m_pembeli->ambil_data()->result(); 
+		$information['barang'] = $this->m_barang->ambil_data()->result(); 
+		$information['uniqueid'] = IdGenerator::generateId(true);
+		$information['jenisbarang'] = $JENISBARANG;
+		$this->load->view('keluar/keluar_add', $information);
+	}
+	
+	public function doadd(){
+		$var = $this->input->post();
+		
+		// echo "<pre>";
+		// var_dump($var);
+		// echo "</pre>";
+		// die;
+		
+		$keluar_barang = $var['keluar_barang'];
+		$keluar_barang_hrg = $var['keluar_barang_hrg'];
+		$keluar_barang_jml = $var['keluar_barang_jml'];
+		
+		
+		/**
+     * Transaksi
+     */
+		$id = $var["id"];
+		$id_pembeli = $var["id_pembeli"];
+		$keterangan = $var["keterangan"];
+		$tanggal= $var["tanggal"];
+		
+		$data = array(
+			'id' => $id,
+			'id_pembeli' => $id_pembeli,
+			'keterangan' => $keterangan,
+			'tanggal' => $tanggal,
+		);
+		
+		$status = $this->m_keluar->input_data($data);
+		
+		/**
+     * detail
+     */
+		if($status) {
+			/**
+			 * todo add, conditional if success insert
+			 */
+      
+      foreach ($keluar_barang as $k => $v) {
+        
+        $id = IdGenerator::generateId(false);
+        $id_keluar = $data['id'];
+        $id_barang = $v;
+        $harga = $keluar_barang_hrg[$k];
+        $jumlah = $keluar_barang_jml[$k];
+        
+        $detBar = array(
+          'id' => $id,
+          'id_keluar' => $id_keluar,
+          'id_barang' => $id_barang,
+          'harga' => $harga,
+          'jumlah' => $jumlah,
+        );
+        
+        $this->m_keluar_detail->input_data($detBar); 
+        
+      }
+      
+			header('location:./');
+		} else {
+			/**
+			 * todo add, conditional if failed
+			 */
+		}
 	}
 	
 	public function tambahdatakeluar()
@@ -63,5 +146,20 @@ class KeluarManage extends CI_Controller {
 
 		
 	    }
+	
+  public function doremove($id){		
+    $status = $this->m_keluar->force_delete($id);
+    if($status) {
+      /**
+       * todo add, conditional if success insert
+       */
+      header('location:./../');
+    } else {
+      /**
+       * todo add, conditional if failed
+       */
+    }
+    
+  }
 	    
 }
