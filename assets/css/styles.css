@@ -75,6 +75,7 @@
     scroll-behavior: smooth;
   }
 }
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -83,7 +84,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: #f9fafb;
   text-align: var(--bs-body-text-align);
-  background-color: #020202;
+  background-color: #41464b; 
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
