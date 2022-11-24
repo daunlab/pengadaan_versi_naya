@@ -82,9 +82,9 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: #f9fafb;
+  color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: #515a62; 
+  background-color: #41464b;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -1966,7 +1966,7 @@ progress {
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
-  color: #f9fafb;
+  color: #ffffff;
   vertical-align: top;
   border-color: #dee2e6;
 }
@@ -2191,15 +2191,20 @@ progress {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #000000;
-  background-color: #2b4858;
+  color: #212529;
+  background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #f9fafb;
+  border: 1px solid #ced4da;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-control, .dataTable-input {
+    transition: none;
+  }
 }
 .form-control[type=file], [type=file].dataTable-input {
   overflow: hidden;
@@ -2230,8 +2235,7 @@ progress {
   opacity: 1;
 }
 .form-control:disabled, .dataTable-input:disabled, .form-control[readonly], [readonly].dataTable-input {
-  background-color: #2b4858;
-  color: floralwhite;
+  background-color: #e9ecef;
   opacity: 1;
 }
 .form-control::-webkit-file-upload-button, .dataTable-input::-webkit-file-upload-button {
@@ -2407,13 +2411,13 @@ textarea.form-control-lg {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #f9fafb;
-  background-color: #2b4858;
+  color: #212529;
+  background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 1px solid #bcced5;
+  border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
@@ -4577,7 +4581,12 @@ textarea.form-control-lg {
 .card-header {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
-  background-color: #2b3238;
+  background-color: #212529f5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 .card-header:first-child {
@@ -4802,7 +4811,7 @@ textarea.form-control-lg {
   content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
 .breadcrumb-item.active {
-  color: #f9fafb;
+  color: #6c757d;
 }
 
 .pagination, .dataTable-pagination ul {
@@ -5572,7 +5581,6 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1rem;
-  background-color: #41464b;
   border-bottom: 1px solid #dee2e6;
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
@@ -5588,11 +5596,9 @@ textarea.form-control-lg {
 }
 
 .modal-body {
-  color: #f9fafb;
-    text-align: var(--bs-body-text-align);
-    background-color: #41464b;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
 }
 
 .modal-footer {
@@ -11439,11 +11445,6 @@ body {
   flex-wrap: nowrap;
 }
 .sb-sidenav .sb-sidenav-menu {
-  color: #f9fafb;
-  text-align: var(--bs-body-text-align);
-  background-color: #252b30;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   flex-grow: 1;
 }
 .sb-sidenav .sb-sidenav-menu .nav {
@@ -11484,9 +11485,8 @@ body {
 }
 
 .sb-sidenav-dark {
-    background-color: #0e181a;
-    color: rgba(255, 255, 255, 0.5);
-
+  background-color: #212529;
+  color: rgba(255, 255, 255, 0.5);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: rgba(255, 255, 255, 0.25);
@@ -11510,7 +11510,7 @@ body {
   color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-footer {
-  background-color: #13171a;
+  background-color: #343a40;
 }
 
 .sb-sidenav-light {
@@ -11668,7 +11668,7 @@ body {
   width: 0;
   position: absolute;
   right: 4px;
-  border-bottom: 4px solid #f0f0f0;
+  border-left: 4px solid transparent;
   border-right: 4px solid transparent;
   opacity: 0.2;
 }

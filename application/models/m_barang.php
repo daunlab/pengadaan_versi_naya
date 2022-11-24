@@ -19,6 +19,9 @@ class M_barang extends CI_Model{
 	function input_data($data,$table){ 
 		return $this->db->insert($table,$data); 
 	} 
+	function edit_data($id, $data){
+		return $this->db->edit($this->tableName, $data, array('id' => $id));
+	}
 	function update_data($id, $data){
 		return $this->db->update($this->tableName, $data, array('id' => $id));
 	}
