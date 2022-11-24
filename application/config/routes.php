@@ -91,6 +91,16 @@ $route['pembeli/(:any)/hitedit'] = 'pembelimanage/doedit/$1';
 $route['pembeli/(:any)/hitremove'] = 'pembelimanage/doremove/$1';
 
 /**
+ * master tukang
+ */
+$route['tukang'] = 'tukangmanage';
+$route['tukang/tambah'] = 'tukangmanage/goadd';
+$route['tukang/hittambah'] = 'tukangmanage/doadd';
+$route['tukang/(:any)/edit'] = 'tukangmanage/goedit/$1';
+$route['tukang/(:any)/hitedit'] = 'tukangmanage/doedit/$1';
+$route['tukang/(:any)/hitremove'] = 'tukangmanage/doremove/$1';
+
+/**
  * transaksi barang masuk
  */
 $route['masuk'] = 'masukmanage';

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - Deran Kusen</title>
+        <title>Tukang - Deran Kusen</title>
         <?php $this->load->view('navigator/topscript'); ?>
     </head>
     <body class="sb-nav-fixed">
@@ -33,7 +33,7 @@
                     </div>
                     
                     <div class="card-body">
-                        <form action="<?= base_url('index.php/pembeli/hittambah') ?>" method="POST" >
+                        <form action="<?= base_url('index.php/tukang/hittambah') ?>" method="POST" >
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">                                    
@@ -46,7 +46,7 @@
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input class="form-control" id="inputLastName" name="nama" type="text" value="" placeholder="Input Nama Orang">
-                                        <label for="inputLastName">Nama Orang</label>
+                                        <label for="inputLastName">Nama</label>
                                     </div>
                                 </div>
                                 
@@ -70,8 +70,8 @@
                             </div>
                             
                             <div class="form-group">
-                              <label for="exampleFormControlTextarea1">Kontak</label>
-                              <textarea class="form-control" id="inputHargaBarang" name="kontak" type="text" placeholder="Input Kontak"></textarea>
+                              <label for="exampleFormControlTextarea1">No Telepon</label>
+                              <textarea class="form-control" id="inputHargaBarang" name="no_telp" type="text" placeholder="Input no_telp"></textarea>
                             </div>
                             <div class="mt-4 mb-0">
                                 <div class="d-grid">
