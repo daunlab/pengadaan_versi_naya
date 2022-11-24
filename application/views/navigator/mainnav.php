@@ -10,6 +10,24 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Dashboard
                             </a>
+                            <div class="sb-sidenav-menu-heading">Master</div>
+                            <a class="nav-link" href="<?php echo base_url('index.php/barang');?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Barang
+                            </a>
+                            <a class="nav-link" href="<?php echo base_url('index.php/suplier') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Suplier
+                            </a>
+                            <a class="nav-link" href="<?php echo base_url('index.php/pembeli') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Pembeli
+                            </a>
+                            <a class="nav-link" href="<?php echo base_url('index.php/tukang') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Tukang/Pekerja
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Transaksi</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Barang
@@ -17,8 +35,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url('index.php/barang');?>">   Daftar Barang</a>
                                     <a class="nav-link" href="<?php echo base_url('index.php/masuk');?>">Daftar Barang Masuk</a>
+                                    <a class="nav-link" href="<?php echo base_url('index.php/perubahan');?>">Perubahan Barang</a>
                                     <a class="nav-link" href="<?php echo base_url('index.php/keluar');?>">Daftar Barang Keluar</a>
                                 </nav>
                             </div>

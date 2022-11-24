@@ -66,10 +66,19 @@ $route['api/keluar/(:any)/getdetail'] = 'apikeluar/getdetail/$1';
 $route['barang'] = 'barangmanage';
 $route['barang/tambah'] = 'barangmanage/goadd';
 $route['barang/hittambah'] = 'barangmanage/doadd';
-$route['hitinsertbrg'] = 'barangmanage/tambahbarang';
 $route['barang/(:any)/edit'] = 'barangmanage/goedit/$1';
 $route['barang/(:any)/hitedit'] = 'barangmanage/doedit/$1';
 $route['barang/(:any)/hitremove'] = 'barangmanage/doremove/$1';
+
+/**
+ * master suplier
+ */
+$route['suplier'] = 'supliermanage';
+$route['suplier/tambah'] = 'supliermanage/goadd';
+$route['suplier/hittambah'] = 'supliermanage/doadd';
+$route['suplier/(:any)/edit'] = 'supliermanage/goedit/$1';
+$route['suplier/(:any)/hitedit'] = 'supliermanage/doedit/$1';
+$route['suplier/(:any)/hitremove'] = 'supliermanage/doremove/$1';
 
 /**
  * transaksi barang masuk
