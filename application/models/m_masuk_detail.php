@@ -8,6 +8,7 @@ class M_masuk_detail extends CI_Model{
 		$this->tableName = 'masuk_detail';
 		
 		$this->load->model('m_masuk');
+		$this->load->model('m_barang');
 	}
 	
 	function ambil_data(){ 
@@ -32,7 +33,7 @@ class M_masuk_detail extends CI_Model{
 			/**
 			 * update stok
 			 */
-			// $this->m_barang->addStok($data['idbarang'], $data['jumlah']);
+			$this->m_barang->addStok($data['id_barang'], $data['jumlah']);
 			return true;
 		} else {
 			return false;

@@ -8,6 +8,7 @@ class M_keluar_detail extends CI_Model{
 		$this->tableName = 'keluar_detail';
 		
 		$this->load->model('m_keluar');
+		$this->load->model('m_barang');
 	}
 	
 	function ambil_data(){ 
@@ -33,7 +34,7 @@ class M_keluar_detail extends CI_Model{
 			/**
 			 * update stok
 			 */
-			// $this->m_barang->addStok($data['idbarang'], $data['jumlah']);
+			$this->m_barang->reduceStok($data['id_barang'], $data['jumlah']);
 			return true;
 		} else {
 			return false;
