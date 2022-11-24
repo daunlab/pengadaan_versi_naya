@@ -11440,10 +11440,10 @@ body {
 }
 .sb-sidenav .sb-sidenav-menu {
   color: #f9fafb;
-    text-align: var(--bs-body-text-align);
-    background-color: #13171a;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-align: var(--bs-body-text-align);
+  background-color: #252b30;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   flex-grow: 1;
 }
 .sb-sidenav .sb-sidenav-menu .nav {

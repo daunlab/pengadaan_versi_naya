@@ -44,7 +44,7 @@
                                 ?>
                                 
                                     <div class="form-floating mb-3 mb-md-0">                                    
-                                        <input class="form-control" id="Barang Masuk" name="id" type="text" value="<?= $id_masuk ?>" placeholder="Input Id Barang Masuk" title="otomatis di buat" readonly="readonly">
+                                        <input id="Barang Masuk" name="id" type="text" value="<?= $id_masuk ?>" placeholder="Input Id Barang Masuk">
                                         <label for="Barang Masuk">Id Barang Masuk</label>
                                     </div>
                                 </div>
