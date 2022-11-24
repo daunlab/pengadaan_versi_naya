@@ -71,8 +71,8 @@
                                                     <input type='hidden' name='aksi' value="delete" >
                                                     <input type='hidden' name='id' value="<?= $i->id ?>" >
                                                 </form>
-                                                <a href="<?= base_url('index.php/barang/'.$i->id.'/edit') ?>" class="btn btn-danger btn-sm">Edit</a>
-                                                <a href="javascript:formSubmit('<?= $i->id ?>');" class="btn btn-warning btn-sm">Hapus</a>
+                                                <a href="<?= base_url('index.php/barang/'.$i->id.'/edit') ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="javascript:formSubmit('<?= $i->id ?>');" class="btn btn-danger btn-sm">Hapus</a>
                                                 </td>
                                         
                                     

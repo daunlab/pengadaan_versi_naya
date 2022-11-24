@@ -61,6 +61,8 @@ class BarangManage extends CI_Controller {
 	}
 	
 	public function goedit($id){
+		global $JENISBARANG;
+		$data['jenisbarang'] = $JENISBARANG;
 		$data['barang'] = $this->m_barang->ambil_data_satu($id)->row(); 
 		$this->load->view('barang/barang_edit', $data);
 	}
@@ -68,24 +70,28 @@ class BarangManage extends CI_Controller {
 	public function doedit($id) {
 	
 		$variable = $this->input->post();
-		$idbarang = $variable["idbarang"];
-		$namabarang = $variable["namabarang"];
+		$id = $variable["id"];
+		$nama = $variable["nama"];
 		$harga= $variable["harga"];
+		$jenis= $variable["jenis"];
 		$stok= $variable["stok"];
+		$satuan= $variable["satuan"];
 		
 		$data = array(
-			'namabarang' => $namabarang,
+			'nama' => $nama,
 			'harga' => $harga,
+			'jenis' => $jenis,
 			'stok' => $stok,
+			'satuan' => $satuan,
 		);
 		
-		$status = $this->m_barang->update_data($idbarang,$data);
+		$status = $this->m_barang->update_data($id,$data);
 		
 		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:'.base_url('/index.php/barang/'.$idbarang.'/edit'));
+			header('location:'.base_url('/index.php/barang/'.$id.'/edit'));
 		} else {
 			/**
 			 * todo add, conditional if failed

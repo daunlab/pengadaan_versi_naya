@@ -64,7 +64,7 @@
                                                     <input type='hidden' name='id' value="<?= $i->id ?>" >
                                                 </form>
                                                 <button class='btn btn-info btn-sm' type="button" onclick="showDetail('<?= $i->id ?>')">Info</button>
-                                                <a href="<?= base_url('index.php/masuk/'.$i->id.'/edit') ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                <!-- <a href="<?= base_url('index.php/masuk/'.$i->id.'/edit') ?>" class="btn btn-warning btn-sm">Edit</a> -->
                                                 <a href="javascript:formSubmit('<?= $i->id ?>');" class="btn btn-danger btn-sm">Hapus</a>
                                                 </td>
                                         </tr>
