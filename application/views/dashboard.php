@@ -79,7 +79,6 @@
                                         <tr>
                                             <th>Jenis</th>
                                             <th>ID Transaksi</th>
-                                            <th>ID Barang</th>
                                             <th>Nama Barang</th>
                                             <th>stok</th>
                                             <th>Harga</th>
@@ -90,7 +89,6 @@
                                         <tr>
                                             <th>Jenis</th>
                                             <th>ID Transaksi</th>
-                                            <th>ID Barang</th>
                                             <th>Nama Barang</th>
                                             <th>jumlah</th>
                                             <th>Harga</th>
@@ -102,7 +100,6 @@
                                         <tr>
                                             <td><?= ($i->jenis == "IN") ? "Barang Masuk" : "Barang Keluar" ;  ?></td>
                                             <td><?= $i->id_trx ?></td>
-                                            <td><?= $i->idbarang ?></td>
                                             <td><?= $i->nama_barang ?></td>
                                             <td><?= $i->jumlah?></td>
                                             <th><?= $i->harga ?></th>

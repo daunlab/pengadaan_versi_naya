@@ -18,9 +18,9 @@ class Dashboard extends CI_Controller {
     
     $query = "
     SELECT * FROM (
-      SELECT 'IN' AS jenis, id_masuk AS 'id_trx', idbarang, nama_barang, jumlah, harga, tanggal FROM masuk 
+      SELECT 'IN' AS jenis, m.id AS 'id_trx', b.nama AS `nama_barang`, md.jumlah, md.harga, tanggal FROM masuk_detail md INNER JOIN masuk m ON m.id = md.id_masuk INNER JOIN barang b ON md.id_barang = b.id
       UNION 
-      SELECT 'OUT' AS jenis, id_keluar AS 'id_trx', idbarang, nama_barang, jumlah, harga, tanggal FROM keluar 
+      SELECT 'OUT' AS jenis, k.id AS 'id_trx', b.nama AS `nama_barang`, kd.jumlah, kd.harga, tanggal FROM keluar_detail kd INNER JOIN keluar k ON k.id = kd.id_keluar INNER JOIN barang b ON kd.id_barang = b.id
       ) AS trx ORDER BY tanggal DESC;
     ";
     
