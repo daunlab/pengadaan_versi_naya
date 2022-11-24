@@ -102,9 +102,9 @@ class BarangManage extends CI_Controller {
 	public function doremove($id){
 		
 		$variable = $this->input->post();
-		$idbarang = $variable["idbarang"];
+		$id = $variable["id"];
 		
-		$status = $this->m_barang->delete_data($idbarang);
+		$status = $this->m_barang->delete_data($id);
 		
 		if($status) {
 			/**

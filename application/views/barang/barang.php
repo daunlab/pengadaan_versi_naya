@@ -121,9 +121,10 @@
         </div>
         
         <script>
-            // function formSubmit(id) {
-            //     $('form#formdel_'+id).submit();
-            // }
+            function formSubmit(id) {
+                // alert(id)
+                $('form#formdel_'+id).submit();
+            }
         </script>
         
         <?php $this->load->view('navigator/bottomscript'); ?>
