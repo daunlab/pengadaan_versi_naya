@@ -81,6 +81,16 @@ $route['suplier/(:any)/hitedit'] = 'supliermanage/doedit/$1';
 $route['suplier/(:any)/hitremove'] = 'supliermanage/doremove/$1';
 
 /**
+ * master suplier
+ */
+$route['pembeli'] = 'pembelimanage';
+$route['pembeli/tambah'] = 'pembelimanage/goadd';
+$route['pembeli/hittambah'] = 'pembelimanage/doadd';
+$route['pembeli/(:any)/edit'] = 'pembelimanage/goedit/$1';
+$route['pembeli/(:any)/hitedit'] = 'pembelimanage/doedit/$1';
+$route['pembeli/(:any)/hitremove'] = 'pembelimanage/doremove/$1';
+
+/**
  * transaksi barang masuk
  */
 $route['masuk'] = 'masukmanage';
