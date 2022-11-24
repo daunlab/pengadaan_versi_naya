@@ -121,6 +121,16 @@ $route['keluar/(:any)/hitedit'] = 'keluarmanage/doedit/$1';
 $route['keluar/(:any)/hitremove'] = 'keluarmanage/doremove/$1';
 
 /**
+ * transaksi barang keluar
+ */
+$route['perubahan'] = 'perubahanmanage';
+$route['perubahan/tambah'] = 'perubahanmanage/goadd';
+$route['perubahan/hittambah'] = 'perubahanmanage/doadd';
+$route['perubahan/(:any)/edit'] = 'perubahanmanage/goedit/$1';
+$route['perubahan/(:any)/hitedit'] = 'perubahanmanage/doedit/$1';
+$route['perubahan/(:any)/hitremove'] = 'perubahanmanage/doremove/$1';
+
+/**
  * transaksi convert barang
  */
 
