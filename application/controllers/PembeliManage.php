@@ -23,7 +23,7 @@ class PembeliManage extends CI_Controller {
 
 	public function goadd(){
 	  $information['jeniskelamin'] = $this->JENISKELAMIN;
-		$information['uniqueid'] = IdGenerator::generateId(true);
+		$information['emptystring'] = IdGenerator::generateId(true);
 		$this->load->view('pembeli/pembeli_add', $information);
 	}
 	

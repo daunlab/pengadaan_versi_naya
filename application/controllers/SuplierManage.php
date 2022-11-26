@@ -19,7 +19,7 @@ class SuplierManage extends CI_Controller {
 	}
 
 	public function goadd(){
-		$information['uniqueid'] = IdGenerator::generateId(true);
+		$information['emptystring'] = IdGenerator::generateId(true);
 		$this->load->view('suplier/suplier_add', $information);
 	}
 	

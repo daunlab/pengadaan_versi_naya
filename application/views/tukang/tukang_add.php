@@ -37,7 +37,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">                                    
-                                        <input class="form-control" id="inputFirstName" name="id" type="text" value="<?= $uniqueid ?>" placeholder="Input Id" title="otomatis di buat">
+                                        <input class="form-control" id="inputFirstName" name="id" type="text" uniqid="<?= $emptystring ?>" placeholder="Input Id" >
                                         <label for="inputFirstName">Id</label>
                                     </div>
                                 </div>

@@ -22,7 +22,7 @@ class BarangManage extends CI_Controller {
 
 	public function goadd(){
 		global $JENISBARANG;
-		$information['uniqueid'] = IdGenerator::generateId(true);
+		$information['emptystring'] = IdGenerator::generateId(true);
 		$information['jenisbarang'] = $JENISBARANG;
 		$this->load->view('barang/barang_add', $information);
 	}

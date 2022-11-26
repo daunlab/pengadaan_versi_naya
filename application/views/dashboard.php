@@ -35,7 +35,7 @@
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-info text-white mb-4">
                                     <div class="card-body" align='center'>Total Produk</div>
                                     <div class="card-body">
                                         <p align='center'><?= $tprod->TotalProduct ?> </p>

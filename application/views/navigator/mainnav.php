@@ -15,14 +15,6 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Barang
                             </a>
-                            <a class="nav-link" href="<?php echo base_url('index.php/suplier') ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Suplier
-                            </a>
-                            <a class="nav-link" href="<?php echo base_url('index.php/pembeli') ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Pembeli
-                            </a>
                             <a class="nav-link" href="<?php echo base_url('index.php/tukang') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Tukang/Pekerja
@@ -35,9 +27,11 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<?php echo base_url('index.php/suplier')?>">Suplier</a>
                                     <a class="nav-link" href="<?php echo base_url('index.php/masuk');?>">Daftar Barang Masuk</a>
-                                    <a class="nav-link" href="<?php echo base_url('index.php/perubahan');?>">Perubahan Barang</a>
+                                    <a class="nav-link" href="<?php echo base_url('index.php/pembeli');?>">Pembeli</a>
                                     <a class="nav-link" href="<?php echo base_url('index.php/keluar');?>">Daftar Barang Keluar</a>
+                                    <a class="nav-link" href="<?php echo base_url('index.php/perubahan');?>">Perubahan Barang</a>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Addons</div>

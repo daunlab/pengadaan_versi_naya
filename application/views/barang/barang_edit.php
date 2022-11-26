@@ -45,7 +45,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputLastName" name="nama" type="text" value="<?= $barang->nama ?>" placeholder="Input Nama Barang">
+                                        <input class="form-control" id="inputLastName" name="namabarang" type="text" value="<?= $namabarang->namabarang?>" placeholder="Input namabarang>
                                         <label for="inputLastName">Nama Barang</label>
                                     </div>
                                 </div>

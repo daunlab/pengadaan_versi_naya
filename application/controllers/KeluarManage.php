@@ -25,7 +25,7 @@ class KeluarManage extends CI_Controller {
 		global $JENISBARANG;
 		$information['pembeli'] = $this->m_pembeli->ambil_data()->result(); 
 		$information['barang'] = $this->m_barang->ambil_data()->result(); 
-		$information['uniqueid'] = IdGenerator::generateId(true);
+		$information['emptystring'] = IdGenerator::generateId(true);
 		$information['jenisbarang'] = $JENISBARANG;
 		$this->load->view('keluar/keluar_add', $information);
 	}

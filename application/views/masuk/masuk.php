@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - DeranKusen</title>
+        <title>Barang Masuk- DeranKusen</title>
         <?php $this->load->view('navigator/topscript') ?>
     </head>
     <body class="sb-nav-fixed">
