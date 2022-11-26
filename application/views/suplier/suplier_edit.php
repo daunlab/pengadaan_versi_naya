@@ -33,11 +33,11 @@
                     </div>
                     
                     <div class="card-body">
-                        <form action="<?= base_url('index.php/barang/'.$suplier->id.'/hitedit') ?>" method="POST" >
+                        <form id='main_form' action="<?= base_url('index.php/suplier/'.$suplier->id.'/hitedit') ?>" method="POST" >
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">                                    
-                                        <input class="form-control" id="inputFirstName" name="id" type="text" value="<?= $suplier->id ?>" placeholder="Input Id Barang" title="otomatis di buat" readonly="readonly">
+                                        <input class="form-control" id="inputFirstName" name="id" type="text" value="<?= $suplier->id ?>" placeholder="Input Id Suplier" title="otomatis di buat" readonly="readonly">
                                         <label for="inputFirstName">Id</label>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                     
                 </main>
                 <footer class="py-4 bg-light mt-auto">
-                    <?php $this->load->view('pages/footer.php'); ?>
+                    <!-- <?php $this->load->view('pages/footer.php'); ?> -->
                 </footer>
             </div>
         </div>
@@ -98,7 +98,7 @@
             }
         </script>
         
-        <?php $this->load->view('navigator/bottomscript.php'); ?>
+        <!-- <?php $this->load->view('navigator/bottomscript.php'); ?> -->
 
     </body>
 </html>

@@ -63,7 +63,7 @@ class SuplierManage extends CI_Controller {
 	
 		$var = $this->input->post();
 		
-		$id = $variable["id"];
+		$id = $var["id"];
     $nama = $var["nama"];
 		$nama_perusahaan = $var["nama_perusahaan"];
 		$alamat= $var["alamat"];
