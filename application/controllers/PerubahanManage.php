@@ -129,7 +129,7 @@ class PerubahanManage extends CI_Controller {
           'jumlah' => $jml_jadi,
         );
         
-        $this->m_perubahan_mentah->input_data($detBar); 
+        $this->m_perubahan_jadi->input_data($detBar); 
         
       }
       
