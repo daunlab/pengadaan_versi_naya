@@ -101,7 +101,7 @@ class SuplierManage extends CI_Controller {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:'.base_url('/index.php/suplier'));
+			header('location:'.base_url('/index.php/suplier/'));
 		} else {
 			/**
 			 * todo add, conditional if failed

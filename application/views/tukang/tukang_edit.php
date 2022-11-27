@@ -76,7 +76,7 @@
                             
                             <div class="form-group">
                               <label for="exampleFormControlTextarea1">No Telepon</label>
-                              <textarea class="form-control" id="inputHargaBarang" name="no_telp" type="text" placeholder="Input Telepon"><?= $tukang->kontak ?></textarea>
+                              <textarea class="form-control" id="inputHargaBarang" name="no_telp" type="text" placeholder="Input Telepon"><?= $tukang->no_telp ?></textarea>
                             </div>
                             
                             <div class="mt-4 mb-0">

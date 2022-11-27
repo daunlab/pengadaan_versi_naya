@@ -131,8 +131,8 @@ CREATE TABLE IF NOT EXISTS `perubahan_barang` (
 -- Dumping structure for table db_app_naya_01.perubahan_barang_jadi
 CREATE TABLE IF NOT EXISTS `perubahan_barang_jadi` (
   `id` char(45) NOT NULL DEFAULT '-',
-  `id_perubahan` char(25) DEFAULT NULL,
-  `id_barang` char(20) DEFAULT NULL,
+  `id_perubahan` char(45) DEFAULT NULL,
+  `id_barang` char(45) DEFAULT NULL,
   `jumlah` mediumint(8) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_perubahan_barang_jadi_perubahan_barang` (`id_perubahan`),
