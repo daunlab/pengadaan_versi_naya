@@ -47,7 +47,7 @@
                                   <li>nama barnag</li>
                                   <li>stok barang</li>
                                 </ul>
-                                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Cetak</button>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/barang') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak</a>
                               </div>
                             </div>
                           </div>

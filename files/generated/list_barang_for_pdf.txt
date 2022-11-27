@@ -1,0 +1,5 @@
+003982;Lemari;Buah;JI;500000;35
+1003;Kayu;keping;MH;20000;500
+100323;Paku;kg;MH;10000;335
+3332;Meja;Buah;JI;20000;50
+fdgefer;Pintu;Buah;JI;50000;50

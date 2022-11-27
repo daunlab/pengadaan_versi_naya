@@ -13,3 +13,9 @@ define('DB_HOST', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'mysql');
 define('DB_DATABASE', 'db_app_naya_01');
+
+/**
+ * font define
+ */
+
+define('FPDF_FONTPATH', __DIR__."/system/fonts/");
