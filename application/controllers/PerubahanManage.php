@@ -26,7 +26,7 @@ class MasukManage extends CI_Controller {
 		global $JENISBARANG;
 		$information['suplier'] = $this->m_suplier->ambil_data()->result(); 
 		$information['barang'] = $this->m_barang->ambil_data()->result(); 
-		$information['emptystring'] = IdGenerator::generateId(true);
+		$information['uniqueid'] = IdGenerator::generateId(true);
 		$information['jenisbarang'] = $JENISBARANG;
 		$this->load->view('masuk/masuk_add', $information);
 	}

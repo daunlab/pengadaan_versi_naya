@@ -1958,11 +1958,11 @@ progress {
 .table, .dataTable-table {
   --bs-table-bg: transparent;
   --bs-table-accent-bg: transparent;
-  --bs-table-striped-color: #212529;
+  --bs-table-striped-color: #ffffff;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-  --bs-table-active-color: #212529;
+  --bs-table-active-color: #ffffff;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-  --bs-table-hover-color: #212529;
+  --bs-table-hover-color: #fbfdff;
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
@@ -7851,7 +7851,7 @@ textarea.form-control-lg {
     background-color: #0c0805;
 }
 .bg-dark {
-  background-color: #322920;
+  background-image: url('../assets/img/13.jpg');
 }
 .bg-black {
   --bs-bg-opacity: 1;
@@ -11420,8 +11420,9 @@ body {
   margin: 0;
 }
 .sb-topnav.navbar-dark #sidebarToggle {
-  color: rgba(255, 255, 255, 0.5);
+    color: #f9fafb;
 }
+
 .sb-topnav.navbar-light #sidebarToggle {
   color: #212529;
 }

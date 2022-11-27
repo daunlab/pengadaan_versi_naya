@@ -1,13 +1,12 @@
-
-
-<div id="layoutSidenav_nav">
+             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
 
                     <div class="sb-sidenav-menu">
                         <div class="nav">                            
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="<?php echo base_url('index.php/dashboard');?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <i class="fa fa-dashboard"></i>
+                            <i style="font-size:30px" class="fa">&#xf0e4;</i>
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Master</div>
