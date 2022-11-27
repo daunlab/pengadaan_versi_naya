@@ -27,6 +27,42 @@ CREATE TABLE IF NOT EXISTS `barang` (
 
 -- Dumping data for table db_app_naya_01.barang: ~0 rows (approximately)
 
+-- Dumping structure for table db_app_naya_01.pembeli
+CREATE TABLE IF NOT EXISTS `pembeli` (
+  `id` char(45) NOT NULL DEFAULT '',
+  `nama` varchar(50) NOT NULL,
+  `gender` char(2) NOT NULL DEFAULT 'N' COMMENT 'L = laki2x, P = perempuan, N=tidak disebut',
+  `alamat` text,
+  `kontak` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+-- Dumping data for table db_app_naya_01.pembeli: ~0 rows (approximately)
+
+-- Dumping structure for table db_app_naya_01.penyuplai
+CREATE TABLE IF NOT EXISTS `penyuplai` (
+  `id` char(45) NOT NULL DEFAULT '',
+  `nama` varchar(50) NOT NULL,
+  `nama_perusahaan` varchar(150) DEFAULT NULL,
+  `alamat` text,
+  `kontak` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_app_naya_01.penyuplai: ~0 rows (approximately)
+
+-- Dumping structure for table db_app_naya_01.petugas
+CREATE TABLE IF NOT EXISTS `petugas` (
+  `id` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `nama` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `alamat` tinytext CHARACTER SET latin1 NOT NULL,
+  `no_telp` varchar(20) CHARACTER SET latin1 NOT NULL DEFAULT '',
+  `gender` varchar(2) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table db_app_naya_01.petugas: ~0 rows (approximately)
+
 -- Dumping structure for table db_app_naya_01.keluar
 CREATE TABLE IF NOT EXISTS `keluar` (
   `id` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '-',
@@ -94,30 +130,6 @@ CREATE TABLE IF NOT EXISTS `masuk_detail` (
 
 -- Dumping data for table db_app_naya_01.masuk_detail: ~0 rows (approximately)
 
--- Dumping structure for table db_app_naya_01.pembeli
-CREATE TABLE IF NOT EXISTS `pembeli` (
-  `id` char(45) NOT NULL DEFAULT '',
-  `nama` varchar(50) NOT NULL,
-  `gender` char(2) NOT NULL DEFAULT 'N' COMMENT 'L = laki2x, P = perempuan, N=tidak disebut',
-  `alamat` text,
-  `kontak` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
-
--- Dumping data for table db_app_naya_01.pembeli: ~0 rows (approximately)
-
--- Dumping structure for table db_app_naya_01.penyuplai
-CREATE TABLE IF NOT EXISTS `penyuplai` (
-  `id` char(45) NOT NULL DEFAULT '',
-  `nama` varchar(50) NOT NULL,
-  `nama_perusahaan` varchar(150) DEFAULT NULL,
-  `alamat` text,
-  `kontak` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- Dumping data for table db_app_naya_01.penyuplai: ~0 rows (approximately)
-
 -- Dumping structure for table db_app_naya_01.perubahan_barang
 CREATE TABLE IF NOT EXISTS `perubahan_barang` (
   `id` char(45) NOT NULL DEFAULT '-',
@@ -171,18 +183,6 @@ CREATE TABLE IF NOT EXISTS `perubahan_barang_petugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_app_naya_01.perubahan_barang_petugas: ~0 rows (approximately)
-
--- Dumping structure for table db_app_naya_01.petugas
-CREATE TABLE IF NOT EXISTS `petugas` (
-  `id` char(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `nama` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `alamat` tinytext CHARACTER SET latin1 NOT NULL,
-  `no_telp` varchar(20) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `gender` varchar(2) CHARACTER SET latin1 NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- Dumping data for table db_app_naya_01.petugas: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
