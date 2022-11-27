@@ -20,6 +20,13 @@ class M_perubahan_mentah extends CI_Model{
 	$offset = 0;
 	return $this->db->get_where($this->tableName, array('id' => $id), $limit, $offset); 
     }
+    
+    function ambil_data_where($where = array()){
+      $limit = 1000; /** just set to no limit */
+      $offset = 0;
+      return $this->db->get_where($this->tableName, $where, $limit, $offset); 
+    }
+    
 	function input_data($data){ 
 	
 		/**

@@ -60,6 +60,10 @@ $route['api/barang/(:any)/get'] = 'apibarang/get/$1';
 $route['api/petugas/(:any)/get'] = 'apipetugas/get/$1';
 $route['api/masuk/(:any)/getdetail'] = 'apimasuk/getdetail/$1';
 $route['api/keluar/(:any)/getdetail'] = 'apikeluar/getdetail/$1';
+$route['api/perubahan/(:any)/getinfo'] = 'apiperubahan/getinfo/$1';
+$route['api/perubahan/(:any)/getpetugas'] = 'apiperubahan/getpetugas/$1';
+$route['api/perubahan/(:any)/getmentah'] = 'apiperubahan/getmentah/$1';
+$route['api/perubahan/(:any)/getjadi'] = 'apiperubahan/getjadi/$1';
 
 /**
  * master barang

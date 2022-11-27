@@ -92,17 +92,32 @@
                         <h5>Transaksi</h5>
                         <ul>
                           <li>Kode Transaksi : <span id='id_trx'></span></li>
-                          <li>Nama Suplier : <span id='suplier_nama'></span> dari Perusahaan : <span id='suplier_perusahaan'></span></li>
                           <li>Keterangan : <span id='keterangan_trx'></li>
                           <li>Tanggal : <span id='tanggal_trx'></li>
                         </ul>
                         <hr/>
-                        <h5>Daftar Barang</h5>
-                        <table id='det_brg_trx' class='table'>
+                        <h5>Daftar Petugas</h5>
+                        <table id='det_petugas' class='table'>
+                          <tr>
+                            <td>Nama</td>
+                            <td>No hp</td>
+                            <td>alamat</td>
+                          </tr>
+                        </table>
+                        <hr/>
+                        <h5>Daftar Barang Mentah</h5>
+                        <table id='det_mentah' class='table'>
                           <tr>
                             <td>Nama Barang</td>
-                            <td>Harga</td>
-                            <td>Jumlah Perubahan</td>
+                            <td>Jumlah Pemakaian</td>
+                          </tr>
+                        </table>
+                        <hr/>
+                        <h5>Daftar Barang Jadi</h5>
+                        <table id='det_jadi' class='table'>
+                          <tr>
+                            <td>Nama Barang</td>
+                            <td>Jumlah Jadi</td>
                           </tr>
                         </table>
                       </div>
@@ -122,7 +137,7 @@
             
             function showDetail(id) {
               $.ajax({
-                url: "<?= base_url() ?>index.php/api/perubahan/"+id+"/getdetail",
+                url: "<?= base_url() ?>index.php/api/perubahan/"+id+"/getinfo",
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
@@ -130,25 +145,63 @@
                     val = res[0];
                     
                     $("#id_trx").html(val.id)
-                    $("#suplier_nama").html(val.nama_suplier)
-                    $("#suplier_perusahaan").html(val.nama_perusahaan)
                     $("#keterangan_trx").html(val.keterangan)
                     $("#tanggal_trx").html(val.tanggal)
+                    
+                },
+              });
+              
+              $.ajax({
+                url: "<?= base_url() ?>index.php/api/perubahan/"+id+"/getpetugas",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+                
+                
+                    
+                    // val = res[0];
+                    
+                    // $("#id_trx").html(val.id)
+                    // $("#keterangan_trx").html(val.keterangan)
+                    // $("#tanggal_trx").html(val.tanggal)
+                    
+                    console.log(res)
+                    
+                    var detailPetugas = "";
+                    for (let index = 0; index < res.length; index++) {
+                      const el = res[index];
+                      detailPetugas = detailPetugas + "<tr>" + "<td>"+el.nama+"</td>" + "<td>"+el.no_telp+"</td>" + "<td>"+el.alamat+"</td>" + "</tr>";
+                    }
+                    
+                    $("#det_petugas").html("<tr><td>Nama</td><td>No Hp</td><td>Alamat</td></tr>"+detailBrg);
+                },
+              });
+              
+              $.ajax({
+                url: "<?= base_url() ?>index.php/api/perubahan/"+id+"/getmentah",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+                
+                
+                    
+                    // val = res[0];
+                    
+                    // $("#id_trx").html(val.id)
+                    // $("#keterangan_trx").html(val.keterangan)
+                    // $("#tanggal_trx").html(val.tanggal)
+                    
+                    console.log()
                     
                     var detailBrg = "";
                     for (let index = 0; index < res.length; index++) {
                       const el = res[index];
-                      
-                      // console.log(el);
-                      detailBrg = detailBrg + "<tr>" + "<td>"+el.nama_barang+"</td>" + "<td>"+el.harga+"</td>" + "<td>"+el.jumlah+"</td>" + "</tr>";
-                      
+                      detailBrg = detailBrg + "<tr>" + "<td>"+el.nama_barang+"</td>" + "<td>"+el.jumlah+"</td>" + "</tr>";
                     }
                     
-                    $("#det_brg_trx").html("<tr><td>Nama Barang</td><td>Harga</td><td>Jumlah Perubahan</td></tr>"+detailBrg);
-                    
-                    
+                    $("#det_mentah").html("<tr><td>Nama Barang</td><td>Jumlah Perubahan</td></tr>"+detailBrg);
                 },
-            });
+              });
               
               $('#detailModal').modal('toggle');
               
