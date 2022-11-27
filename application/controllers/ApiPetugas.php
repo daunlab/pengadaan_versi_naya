@@ -5,16 +5,16 @@ include_once BASEPATH."helpers/IdGenerator.php";
 
 use helper\IdGenerator;
 
-class ApiMasuk extends CI_Controller {
+class ApiPetugas extends CI_Controller {
 
 	function __construct(){ 
 		parent::__construct(); 
-		$this->load->model('m_masuk');
+		$this->load->model('m_petugas');
 	}
 
-	public function getdetail($id)
+	public function get($id)
 	{
-		$result = $this->m_masuk->ambil_data_detail($id)->result(); 
+		$result = $this->m_petugas->ambil_data_satu($id)->result(); 
 		echo json_encode($result);
 	}
 

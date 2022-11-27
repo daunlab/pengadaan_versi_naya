@@ -5,7 +5,7 @@ include_once BASEPATH."helpers/IdGenerator.php";
 
 use helper\IdGenerator;
 
-class MasukManage extends CI_Controller {
+class PerubahanManage extends CI_Controller {
 
   function __construct(){ 
 		parent::__construct(); 
@@ -18,48 +18,57 @@ class MasukManage extends CI_Controller {
 
 	public function index()
 	{
-		$data['masuk'] = $this->m_masuk->ambil_data()->result(); 
-		$this->load->view('masuk/masuk',$data);
+		$data['perubahan'] = $this->m_perubahan->ambil_data()->result(); 
+		$this->load->view('perubahan/perubahan',$data);
 	}
 	
   public function goadd(){
-		global $JENISBARANG;
-		$information['suplier'] = $this->m_suplier->ambil_data()->result(); 
-		$information['barang'] = $this->m_barang->ambil_data()->result(); 
+		global $JENISBARANG, $JENISKELAMIN;
+		$information['barang_mentah'] = $this->m_barang->ambil_data_where(array("jenis"=>"MH"))->result(); 
+		$information['barang_jadi'] = $this->m_barang->ambil_data_where(array("jenis"=>"JI"))->result(); 
+		$information['petugas'] = $this->m_petugas->ambil_data()->result(); 
 		$information['emptystring'] = IdGenerator::generateId(true);
 		$information['jenisbarang'] = $JENISBARANG;
-		$this->load->view('masuk/masuk_add', $information);
+		$information['jeniskelamin'] = $JENISKELAMIN;
+		
+		// echo "<pre>";
+		// var_dump($information['barang_mentah']);
+		// echo "<br/>";
+		// echo "<br/>";
+		// echo "<br/>";
+		// var_dump($information['barang_jadi']);
+		// echo "</pre>";
+		// die;
+		
+		$this->load->view('perubahan/perubahan_add', $information);
 	}
 	
 	public function doadd(){
 		$var = $this->input->post();
 		
-		// echo "<pre>";
-		// var_dump($var);
-		// echo "</pre>";
-		// die;
+		$perubahan_petugas = $var['perubahan_petugas'];
 		
-		$masuk_barang = $var['masuk_barang'];
-		$masuk_barang_hrg = $var['masuk_barang_hrg'];
-		$masuk_barang_jml = $var['masuk_barang_jml'];
+		$perubahan_mentah = $var['perubahan_mentah'];
+		$perubahan_mentah_jml = $var['perubahan_mentah_jml'];
+		
+		$perubahan_jadi = $var['perubahan_jadi'];
+		$perubahan_jadi_jml = $var['perubahan_jadi_jml'];
 		
 		
 		/**
      * Transaksi
      */
 		$id = $var["id"];
-		$id_suplier = $var["id_suplier"];
 		$keterangan = $var["keterangan"];
 		$tanggal= $var["tanggal"];
 		
 		$data = array(
 			'id' => $id,
-			'id_suplier' => $id_suplier,
 			'keterangan' => $keterangan,
 			'tanggal' => $tanggal,
 		);
 		
-		$status = $this->m_masuk->input_data($data);
+		$status = $this->m_perubahan->input_data($data);
 		
 		/**
      * detail
@@ -69,23 +78,58 @@ class MasukManage extends CI_Controller {
 			 * todo add, conditional if success insert
 			 */
       
-      foreach ($masuk_barang as $k => $v) {
+      /** insert list petugas */
+      foreach ($perubahan_petugas as $k => $v) {
         
         $id = IdGenerator::generateId(false);
-        $id_masuk = $data['id'];
-        $id_barang = $v;
-        $harga = $masuk_barang_hrg[$k];
-        $jumlah = $masuk_barang_jml[$k];
+        $id_perubahan = $data['id'];
+        $id_petugas = $v;
         
         $detBar = array(
           'id' => $id,
-          'id_masuk' => $id_masuk,
-          'id_barang' => $id_barang,
-          'harga' => $harga,
-          'jumlah' => $jumlah,
+          'id_perubahan' => $id_perubahan,
+          'id_petugas' => $id_petugas,
         );
         
-        $this->m_masuk_detail->input_data($detBar); 
+        $this->m_perubahan_petugas->input_data($detBar); 
+        
+      }
+      
+      /** insert list mentah */
+      foreach ($perubahan_mentah as $k => $v) {
+        
+        $id = IdGenerator::generateId(false);
+        $id_perubahan = $data['id'];
+        $id_mentah = $v;
+        $jml_mentah = $perubahan_mentah_jml[$k];
+        
+        $detBar = array(
+          'id' => $id,
+          'id_perubahan' => $id_perubahan,
+          'id_barang' => $id_mentah,
+          'jumlah' => $jml_mentah,
+        );
+        
+        $this->m_perubahan_mentah->input_data($detBar); 
+        
+      }
+      
+      /** insert list jadi */
+      foreach ($perubahan_jadi as $k => $v) {
+        
+        $id = IdGenerator::generateId(false);
+        $id_perubahan = $data['id'];
+        $id_jadi = $v;
+        $jml_jadi = $perubahan_jadi_jml[$k];
+        
+        $detBar = array(
+          'id' => $id,
+          'id_perubahan' => $id_perubahan,
+          'id_barang' => $id_jadi,
+          'jumlah' => $jml_jadi,
+        );
+        
+        $this->m_perubahan_mentah->input_data($detBar); 
         
       }
       
@@ -99,22 +143,22 @@ class MasukManage extends CI_Controller {
 	
   public function goedit($id){
     global $JENISBARANG;
-    $data['id_masuk'] = $id;
+    $data['id_perubahan'] = $id;
     $data['suplier'] = $this->m_suplier->ambil_data()->result(); 
 		$data['barang'] = $this->m_barang->ambil_data()->result(); 
 		$data['jenisbarang'] = $JENISBARANG;
-		$data['masuk'] = $this->m_masuk->ambil_data_detail($id)->result(); 
-		$this->load->view('masuk/masuk_edit', $data);
+		$data['perubahan'] = $this->m_perubahan->ambil_data_detail($id)->result(); 
+		$this->load->view('perubahan/perubahan_edit', $data);
 	}
 
 
 
-  public function tambahdatamasuk() {
+  public function tambahdataperubahan() {
 
 		// query insert
         // variabel form tambah barang
 		$variable = $this->input->post();
-		$id_masuk = $variable["id_masuk"];
+		$id_perubahan = $variable["id_perubahan"];
 		$idbarang = $variable["idbarang"];
 		$nama_barang = $variable["nama_barang"];
 		$jumlah = $variable["jumlah"];
@@ -122,7 +166,7 @@ class MasukManage extends CI_Controller {
 		$tanggal = $variable["tanggal"];
 		
 		$data = array(
-			'id_masuk' => $id_masuk,
+			'id_perubahan' => $id_perubahan,
 			'idbarang' => $idbarang,
 			'nama_barang' => $nama_barang,
 			'jumlah' => $jumlah,
@@ -130,13 +174,13 @@ class MasukManage extends CI_Controller {
 			'tanggal' => $tanggal,
 		);
 
-		$status = $this->m_masuk->input_data($data, 'masuk');
+		$status = $this->m_perubahan->input_data($data, 'perubahan');
 		
 		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:masuk_edit');
+			header('location:perubahan_edit');
 		} else {
 			/**
 			 * todo add, conditional if failed
@@ -147,7 +191,7 @@ class MasukManage extends CI_Controller {
 	public function diedit($id) {
 	
 		$variable = $this->input->post();
-		$idmasuk = $variable["idmasuk"];
+		$idperubahan = $variable["idperubahan"];
 		$idbarang = $variable["idbarang"];
 		$nama_konsumen= $variable["nama_konsumen"];
 		$nama_barang= $variable["nama_barang"];
@@ -157,7 +201,7 @@ class MasukManage extends CI_Controller {
 
 		
 		$data = array(
-			'idmasuk' => $idmasuk,
+			'idperubahan' => $idperubahan,
 			'namakonsumen' => $nama_konsumen,
 			'namabarang' => $nama_barang,
 			'jumlah' => $jumlah,
@@ -165,13 +209,13 @@ class MasukManage extends CI_Controller {
 			
 		);
 		
-		$status = $this->m_masuk->update_data($idbarang,$data);
+		$status = $this->m_perubahan->update_data($idbarang,$data);
 		
 		if($status) {
 			/**
 			 * todo add, conditional if success insert
 			 */
-			header('location:'.base_url('/index.php/masuk/'.$idbarang.'/edit'));
+			header('location:'.base_url('/index.php/perubahan/'.$idbarang.'/edit'));
 		} else {
 			/**
 			 * todo add, conditional if failed
@@ -180,8 +224,7 @@ class MasukManage extends CI_Controller {
 		
 	}
 	public function doremove($id){		
-		$status = $this->m_masuk->force_delete($id);
-		var_dump($status);
+		$status = $this->m_perubahan->force_delete($id);
 		if($status) {
 			/**
 			 * todo add, conditional if success insert

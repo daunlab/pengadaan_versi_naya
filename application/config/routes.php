@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
  * API
  */
 $route['api/barang/(:any)/get'] = 'apibarang/get/$1';
+$route['api/petugas/(:any)/get'] = 'apipetugas/get/$1';
 $route['api/masuk/(:any)/getdetail'] = 'apimasuk/getdetail/$1';
 $route['api/keluar/(:any)/getdetail'] = 'apikeluar/getdetail/$1';
 
@@ -121,13 +122,13 @@ $route['keluar/(:any)/hitedit'] = 'keluarmanage/doedit/$1';
 $route['keluar/(:any)/hitremove'] = 'keluarmanage/doremove/$1';
 
 /**
- * transaksi barang keluar
+ * transaksi perubahan
  */
 $route['perubahan'] = 'perubahanmanage';
 $route['perubahan/tambah'] = 'perubahanmanage/goadd';
 $route['perubahan/hittambah'] = 'perubahanmanage/doadd';
 $route['perubahan/(:any)/edit'] = 'perubahanmanage/goedit/$1';
-$route['perubahan/(:any)/hitedit'] = 'perubahanmanage/doedit/$1';
+// $route['perubahan/(:any)/hitedit'] = 'perubahanmanage/doedit/$1';
 $route['perubahan/(:any)/hitremove'] = 'perubahanmanage/doremove/$1';
 
 /**

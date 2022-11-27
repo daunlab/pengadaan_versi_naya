@@ -11,6 +11,11 @@ class M_barang extends CI_Model{
 	function ambil_data(){ 
 		return $this->db->get($this->tableName); 
 	}
+	function ambil_data_where($where = array()){
+		$limit = 1000; /** just set to no limit */
+		$offset = 0;
+		return $this->db->get_where($this->tableName, $where, $limit, $offset); 
+	}
 	function ambil_data_satu($id){ 
 		$limit = 1;
 		$offset = 0;
