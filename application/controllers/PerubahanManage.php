@@ -85,13 +85,13 @@ class PerubahanManage extends CI_Controller {
         $id_perubahan = $data['id'];
         $id_petugas = $v;
         
-        $detBar = array(
+        $detPetugas = array(
           'id' => $id,
           'id_perubahan' => $id_perubahan,
           'id_petugas' => $id_petugas,
         );
         
-        $this->m_perubahan_petugas->input_data($detBar); 
+        $this->m_perubahan_petugas->input_data($detPetugas); 
         
       }
       
@@ -103,14 +103,14 @@ class PerubahanManage extends CI_Controller {
         $id_mentah = $v;
         $jml_mentah = $perubahan_mentah_jml[$k];
         
-        $detBar = array(
+        $detMentah = array(
           'id' => $id,
           'id_perubahan' => $id_perubahan,
           'id_barang' => $id_mentah,
           'jumlah' => $jml_mentah,
         );
         
-        $this->m_perubahan_mentah->input_data($detBar); 
+        $this->m_perubahan_mentah->input_data($detMentah); 
         
       }
       
@@ -122,14 +122,14 @@ class PerubahanManage extends CI_Controller {
         $id_jadi = $v;
         $jml_jadi = $perubahan_jadi_jml[$k];
         
-        $detBar = array(
+        $detJadi = array(
           'id' => $id,
           'id_perubahan' => $id_perubahan,
           'id_barang' => $id_jadi,
           'jumlah' => $jml_jadi,
         );
         
-        $this->m_perubahan_jadi->input_data($detBar); 
+        $this->m_perubahan_jadi->input_data($detJadi); 
         
       }
       
