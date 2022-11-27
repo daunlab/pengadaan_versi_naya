@@ -139,7 +139,7 @@ $route['perubahan/(:any)/hitremove'] = 'perubahanmanage/doremove/$1';
  * master suplier
  */
 
-$route['hitlaporan'] ='barangmanage';
+$route['laporan'] ='laporanmanage';
 
 $route['dashboard'] = 'dashboard';
 $route['hitdashboard'] ='barangmanage';

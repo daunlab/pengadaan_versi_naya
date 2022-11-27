@@ -34,7 +34,7 @@
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="<?php echo base_url('index.php/hitlaporan');?>">
+                            <a class="nav-link" href="<?php echo base_url('index.php/laporan');?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 laporan
                             </a>
