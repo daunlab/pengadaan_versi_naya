@@ -156,16 +156,6 @@
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
-                
-                
-                    
-                    // val = res[0];
-                    
-                    // $("#id_trx").html(val.id)
-                    // $("#keterangan_trx").html(val.keterangan)
-                    // $("#tanggal_trx").html(val.tanggal)
-                    
-                    console.log(res)
                     
                     var detailPetugas = "";
                     for (let index = 0; index < res.length; index++) {
@@ -173,7 +163,7 @@
                       detailPetugas = detailPetugas + "<tr>" + "<td>"+el.nama+"</td>" + "<td>"+el.no_telp+"</td>" + "<td>"+el.alamat+"</td>" + "</tr>";
                     }
                     
-                    $("#det_petugas").html("<tr><td>Nama</td><td>No Hp</td><td>Alamat</td></tr>"+detailBrg);
+                    $("#det_petugas").html("<tr><td>Nama</td><td>No Hp</td><td>Alamat</td></tr>"+detailPetugas);
                 },
               });
               
@@ -182,16 +172,6 @@
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
-                
-                
-                    
-                    // val = res[0];
-                    
-                    // $("#id_trx").html(val.id)
-                    // $("#keterangan_trx").html(val.keterangan)
-                    // $("#tanggal_trx").html(val.tanggal)
-                    
-                    console.log()
                     
                     var detailBrg = "";
                     for (let index = 0; index < res.length; index++) {
@@ -200,6 +180,22 @@
                     }
                     
                     $("#det_mentah").html("<tr><td>Nama Barang</td><td>Jumlah Perubahan</td></tr>"+detailBrg);
+                },
+              });
+              
+              $.ajax({
+                url: "<?= base_url() ?>index.php/api/perubahan/"+id+"/getjadi",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+                    
+                    var detailBrg = "";
+                    for (let index = 0; index < res.length; index++) {
+                      const el = res[index];
+                      detailBrg = detailBrg + "<tr>" + "<td>"+el.nama_barang+"</td>" + "<td>"+el.jumlah+"</td>" + "</tr>";
+                    }
+                    
+                    $("#det_jadi").html("<tr><td>Nama Barang</td><td>Jumlah Perubahan</td></tr>"+detailBrg);
                 },
               });
               

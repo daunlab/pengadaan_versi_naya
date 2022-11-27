@@ -20,9 +20,7 @@ class M_keluar extends CI_Model{
 	}
 	
 	function ambil_data_detail($id) {
-    $limit = 1;
-    $limit = 0;
-    
+	
     $this->db->select('k.*, b.id AS `id_barang`, b.nama AS `nama_barang`, kd.id AS `id_detail`, kd.jumlah, kd.harga, p.id AS `id_pembeli` , p.nama AS `nama_pembeli`');
 		$this->db->from('keluar_detail kd');
 		$this->db->join('barang b', 'b.id = kd.id_barang');

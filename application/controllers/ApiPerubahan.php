@@ -23,19 +23,19 @@ class ApiPerubahan extends CI_Controller {
 	
 	public function getpetugas($id)
 	{
-		$result = $this->m_perubahan_petugas->ambil_detail_byidperubahan(array('id_perubahan'=>$id))->result(); 
+		$result = $this->m_perubahan_petugas->ambil_detail_byidperubahan($id)->result(); 
 		echo json_encode($result);
 	}
 	
 	public function getmentah($id)
 	{
-		$result = $this->m_perubahan_mentah->ambil_data_where(array('id_perubahan'=>$id))->result(); 
+		$result = $this->m_perubahan_mentah->ambil_detail_byidperubahan($id)->result(); 
 		echo json_encode($result);
 	}
 	
 	public function getjadi($id)
 	{
-		$result = $this->m_perubahan_jadi->ambil_data_where(array('id_perubahan'=>$id))->result(); 
+		$result = $this->m_perubahan_jadi->ambil_detail_byidperubahan($id)->result(); 
 		echo json_encode($result);
 	}
 

@@ -27,6 +27,15 @@ class M_perubahan_mentah extends CI_Model{
       return $this->db->get_where($this->tableName, $where, $limit, $offset); 
     }
     
+  function ambil_detail_byidperubahan($id){
+    $this->db->select('pbm.* , b.nama as `nama_barang`');
+    $this->db->from('perubahan_barang_mentah pbm');
+    $this->db->join('barang b', 'b.id = pbm.id_barang');
+    $this->db->where('pbm.id_perubahan', $id);
+    
+    return $this->db->get();
+  }
+    
 	function input_data($data){ 
 	
 		/**

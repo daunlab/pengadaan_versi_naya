@@ -33,6 +33,8 @@ class M_perubahan_petugas extends CI_Model{
 		$this->db->from('perubahan_barang_petugas pbp');
 		$this->db->join('petugas p', 'p.id = pbp.id_petugas');
 		$this->db->where('pbp.id_perubahan', $id);
+		
+		return $this->db->get();
   }
   
 	function input_data($data){ 
