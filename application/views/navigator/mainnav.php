@@ -6,21 +6,24 @@
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="<?php echo base_url('index.php/dashboard');?>">
                             <i class="fa fa-dashboard"></i>
-                            <i style="font-size:30px" class="fa">&#xf0e4;</i>
+                            <i style="font-size:10px" class="fa">&#xf0e4;</i>
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Master</div>
                             <a class="nav-link" href="<?php echo base_url('index.php/barang');?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <i class='fas fa-th'></i>
+                            <i style="font-size: 10px" class="fa">&#xf0e4;</i>
                                 Barang
                             </a>
                             <a class="nav-link" href="<?php echo base_url('index.php/tukang') ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <i class="fa fa-male"></i>
+                            <i style="font-size: 10px" class="fa">&#xf0e4;</i>
                                 Tukang/Pekerja
                             </a>
                             <div class="sb-sidenav-menu-heading">Transaksi</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                <i class='fas fa-cart-arrow-down'></i>
+                                <i style="font-size: 10px" class="fa">&#xf0e4;</i>
                                 Barang
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -35,11 +38,13 @@
                             </div>
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="<?php echo base_url('index.php/laporan');?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <i class='fas fa-edit'></i>
+                            <i style="font-size: 10px" class="fa">&#xf0e4;</i>
                                 laporan
                             </a>
                             <a class="nav-link" href="<?php echo base_url('index.php/hitlogout') ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <i class="fa fa-mail-reply"></i>
+                                 <i style="font-size: 10px" class="fa">&#xf0e4;</i>
                                 Logout
                             </a>
                         </div>

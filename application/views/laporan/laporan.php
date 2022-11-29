@@ -44,7 +44,7 @@
                                 <h1 class="card-title pricing-card-title">Barang<small class="text-muted fw-light">/barang</small></h1>
                                 <ul class="list-unstyled mt-3 mb-4">
                                   <li>detail info barang</li>
-                                  <li>nama barnag</li>
+                                  <li>nama barang</li>
                                   <li>stok barang</li>
                                 </ul>
                                 <a target='_blank' href="<?= base_url('index.php/laporan/cetak/barang') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak</a>
@@ -63,7 +63,7 @@
                                   <li>Transkasi Keluar</li>
                                   <li>Transaksi Perubahan</li>
                                 </ul>
-                                <button type="button" class="w-100 btn btn-lg btn-primary">Cetak</button>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/masuk') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak</a>
                               </div>
                             </div>
                           </div>
@@ -79,7 +79,7 @@
                                   <li>Daftar pekerjaan yang dikerjakan</li>
                                   <li>Jumlah barang yg telah dihasilkan</li>
                                 </ul>
-                                <button type="button" class="w-100 btn btn-lg btn-primary">Cetak</button>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/tukang') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak</a>
                               </div>
                             </div>
                           </div>
@@ -179,6 +179,7 @@
                     
                     $("#det_brg_trx").html("<tr><td>Nama Barang</td><td>Harga</td><td>Jumlah Barang Masuk</td></tr>"+detailBrg);
                     
+                    //TRANSAKSI
                     
                 },
             });
@@ -189,6 +190,6 @@
         </script>
         
         <?php $this->load->view('navigator/bottomscript') ?>
-
+    
     </body>
 </html>

@@ -191,7 +191,7 @@ class LaporanManage extends CI_Controller {
     $pdf->AliasNbPages();
     $pdf->AddPage();
     $pdf->SetFont('Times','',12);
-    $pdf->Cell(0,10,'Daftar Barang ',0,1);
+    $pdf->Cell(0,10,'Daftar Barang ',0,2);
     // for($i=1;$i<=40;$i++)
     //     $pdf->Cell(0,10,'Printing line number '.$i,0,1);
     
@@ -203,6 +203,7 @@ class LaporanManage extends CI_Controller {
     $pdf->FancyTable($tableHeader,$data);
     $pdf->Output();
 	}
+<<<<<<< Updated upstream
 	
 	public function doCetakBarang2(){
         global $JENISBARANG;
@@ -211,7 +212,43 @@ class LaporanManage extends CI_Controller {
         $this->load->view('laporan/cetakhtml', $data);
 	}
 	
+=======
+>>>>>>> Stashed changes
 
-	
-	
+    public function doCetakMasuk(){
+    
+        $tableFilesMasuk = "list_masuk_for_pdf.txt";
+        
+        /**
+         * Generate File For Table
+         */
+        $masuk = $this->m_masuk->ambil_data()->result(); 
+        $tableHeader = array_keys(get_object_vars($masuk[0]));
+        
+        $masuk_json = json_decode(json_encode($masuk), true);
+        
+        $this->generateFileForTable($tableFilesMasuk, $tableHeader, $masuk_json);
+        
+    
+        /**
+         * show file pdf
+         */
+        $pdf = new PDF();
+        $pdf->title = "Masuk";
+        $pdf->AliasNbPages();
+        $pdf->AddPage();
+        $pdf->SetFont('Times','',12);
+        $pdf->Cell(0,10,'Daftar Barang Masuk ',0,1);
+        // for($i=1;$i<=40;$i++)
+        //     $pdf->Cell(0,10,'Printing line number '.$i,0,1);
+        
+        // $tableHeader = array('Country', 'Capital', 'Area (sq km)', 'Pop. (thousands)', "some");
+        // Data loading
+        $data = $pdf->LoadData(__DIR__.'/../../files/generated/'.$tableFilesMasuk);
+    
+        // $pdf->AddPage();
+        $pdf->FancyTable($tableHeader,$data);
+        $pdf->Output();
+        }
+        
 }

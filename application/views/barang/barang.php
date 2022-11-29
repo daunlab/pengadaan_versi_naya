@@ -33,7 +33,7 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">- JL.Petaruman, Cihampelas.</li>
                         </ol>
-                            <li class="breadcrumb-item active">DAFTAR BARANG</li>
+                            <li class="breadcrumb-item active">DAFTAR BARANG (BARANG JADI & BARANG MENTAH)</li>
                         <ol>
                             
                         <div class="card mb-4">

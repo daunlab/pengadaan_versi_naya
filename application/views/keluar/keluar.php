@@ -31,7 +31,7 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Daftar Barang Keluar</h1>
                          <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">- Bahan Baku Yang Dibeli</li>
+                            <li class="breadcrumb-item active">- Data Barang yang terjual / yang dibeli pembeli</li>
                         </ol>
                         
                         <div class="card mb-4">

@@ -29,12 +29,9 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Aplikasi Pendataan</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">- JL.Petaruman, Cihampelas.</li>
-                        </ol>
-                            <li class="breadcrumb-item active">DAFTAR TUKANG</li>
-                        <ol>
+                        <h1 class="mt-4">Daftar Tukang/ Pekerja</h1>
+                       
+                           
                             
                         <div class="card mb-4">
                             <div class="card-header">

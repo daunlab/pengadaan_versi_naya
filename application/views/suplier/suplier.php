@@ -29,12 +29,10 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Aplikasi Pendataan</h1>
+                        <h1 class="mt-4">Suplier</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">- JL.Petaruman, Cihampelas.</li>
+                            <li class="breadcrumb-item active">- Daftar Suplier</li>
                         </ol>
-                            <li class="breadcrumb-item active">DAFTAR SUPLIER</li>
-                        <ol>
                             
                         <div class="card mb-4">
                             <div class="card-header">
