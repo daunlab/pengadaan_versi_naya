@@ -204,6 +204,13 @@ class LaporanManage extends CI_Controller {
     $pdf->Output();
 	}
 	
+	public function doCetakBarang2(){
+        global $JENISBARANG;
+        $data['barang'] = $this->m_barang->ambil_data()->result(); 
+        $data['jenisbarang'] = $JENISBARANG; 
+        $this->load->view('laporan/cetakhtml', $data);
+	}
+	
 
 	
 	

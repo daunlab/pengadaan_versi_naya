@@ -145,6 +145,7 @@ $route['perubahan/(:any)/hitremove'] = 'perubahanmanage/doremove/$1';
 
 $route['laporan'] ='laporanmanage';
 $route['laporan/cetak/barang'] ='laporanmanage/doCetakBarang';
+$route['laporan/cetak/barang2'] ='laporanmanage/doCetakBarang2';
 
 $route['dashboard'] = 'dashboard';
 $route['hitdashboard'] ='barangmanage';
