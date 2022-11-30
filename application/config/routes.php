@@ -145,12 +145,9 @@ $route['perubahan/(:any)/hitremove'] = 'perubahanmanage/doremove/$1';
 
 $route['laporan'] ='laporanmanage';
 $route['laporan/cetak/barang'] ='laporanmanage/doCetakBarang';
-<<<<<<< Updated upstream
 $route['laporan/cetak/barang2'] ='laporanmanage/doCetakBarang2';
-=======
 $route['laporan/cetak/masuk'] ='laporanmanage/doCetakMasuk';
 $route['laporan/cetak/tukang'] ='laporanmanage/doCetakTukang';
->>>>>>> Stashed changes
 
 $route['dashboard'] = 'dashboard';
 $route['hitdashboard'] ='barangmanage';

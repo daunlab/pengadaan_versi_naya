@@ -203,7 +203,6 @@ class LaporanManage extends CI_Controller {
     $pdf->FancyTable($tableHeader,$data);
     $pdf->Output();
 	}
-<<<<<<< Updated upstream
 	
 	public function doCetakBarang2(){
         global $JENISBARANG;
@@ -212,8 +211,6 @@ class LaporanManage extends CI_Controller {
         $this->load->view('laporan/cetakhtml', $data);
 	}
 	
-=======
->>>>>>> Stashed changes
 
     public function doCetakMasuk(){
     
