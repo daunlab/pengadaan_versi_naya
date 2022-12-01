@@ -42,7 +42,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">                                    
-                                        <input class="form-control" id="Perubahan Barang" name="id" type="text" value="<?= $emptystring ?>" placeholder="Input Id Perubahan Barang">
+                                        <input class="form-control" id="Perubahan Barang" name="id" type="text" uniqid="<?= $emptystring ?>" placeholder="Input Id Perubahan Barang">
                                         <label for="Perubahan Barang">Id Perubahan Barang</label>
                                     </div>
                                 </div>
@@ -52,10 +52,9 @@
                                 <div class="col-md-6">
                                     <div class="row">                                    
                                         <div class="col-md-3">
-                                          <label for="inputTanggal">Tanggal</label>
-                                        </div>
                                         <div class="col-md-9">
                                           <input id="inputTanggal" name="tanggal" type="text" value="" placeholder="Input Tanggal" style="height: 35px;width: 225px;">
+                                          <label for="inputTanggal">Tanggal</label>
                                         </div>
                                     </div>
                                 </div>

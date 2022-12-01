@@ -54,14 +54,15 @@
                                             }
                                           ?>
                                         </select>
+                                        <div class="row">                                    
+                                        <div class="col-md-3">
+                                        <div class="col-md-9">
+                                          <input id="inputTanggal" name="tanggal" type="text" value="" placeholder="Input Tanggal" style="height: 35px;width: 225px;">
+                                          <label for="inputTanggal">Tanggal</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input class="form-control" id="inputTanggal" name="tanggal" type="text" value="" placeholder="Input Tanggal">
-                                        <label for="inputTanggal">Tanggal</label>
-                                    </div>
-                                </div>
+                            </div>
                                 
                             </div>
                             <div class="row mb-3">
@@ -159,7 +160,11 @@
           </div>
         
         <script>
+        initDeskyCalendar("inputTanggal");
         
+        function formSubmit(id) {
+            $('form#formdel_'+id).submit();
+        }
           function formSubmit(id) {
               $('form#formdel_'+id).submit();
           }

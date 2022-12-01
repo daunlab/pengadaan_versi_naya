@@ -21,7 +21,7 @@ class KeluarManage extends CI_Controller {
 		$this->load->view('keluar/keluar',$data);
 	}
 	
-  public function goadd(){
+    public function goadd(){
 		global $JENISBARANG;
 		$information['pembeli'] = $this->m_pembeli->ambil_data()->result(); 
 		$information['barang'] = $this->m_barang->ambil_data()->result(); 
