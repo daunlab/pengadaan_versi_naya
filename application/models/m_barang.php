@@ -43,10 +43,6 @@ class M_barang extends CI_Model{
 		return $this->db->query("UPDATE barang b SET b.stok = (b.stok - ".$jmlstok.") WHERE b.id = '".$idbarang."';");
 	}
 	function addharga($idbarang, $harga) {
-		return $this->db->query("UPDATE barang b SET b.stok = (b.stok + ".$harga.") WHERE b.id = '".$idbarang."';");
+		return $this->db->query("UPDATE barang b SET b.harga= ".$harga." WHERE b.id = '".$idbarang."';");
 	}
-	function reduceharga($idbarang, $harga) {
-		return $this->db->query("UPDATE barang b SET b.harga = (b.harga - ".$harga.") WHERE b.id = '".$idbarang."';");
-	}
-	
 }
