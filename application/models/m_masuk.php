@@ -58,7 +58,7 @@ class M_masuk extends CI_Model{
 			 * update stok
 			 * update harga */
 			// $this->m_barang->addStok($data['idbarang'], $data['jumlah']);
-			// $this->m_barang->addharga($data['idbarang'], $data['harga']);
+			// $this->m_barang->addharga($data['idbarang'], $data['']);
 			return true;
 		} else {
 			return false;

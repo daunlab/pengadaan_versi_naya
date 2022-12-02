@@ -210,11 +210,8 @@
                     
                     arrjenisbrg["MH"] = "Mentah";
                     var jenisbrg = arrjenisbrg[val.jenis];
-                    
-                    if(context=="mentah") {
-                      $('#list_mentah tr:last').after("<tr id=\"tr_mentah_"+val.id+"\"><td>#<input type='hidden' name=perubahan_mentah[] value='"+val.id+"'></td><td>"+val.nama+"</td><td><input type='text' name='perubahan_mentah_jml[]' value='1'> <span class='text-muted'>stok saat ini: "+val.stok+"</span></td><td><button class='btn btn-danger btn-sm' type='button' onclick=\"dodeltr(\'"+val.id+"\')\">delete</button></td></tr>");
 
-                  }
+                  
                 }
                 }
             });
