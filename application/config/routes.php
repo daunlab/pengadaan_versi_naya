@@ -147,7 +147,7 @@ $route['laporan'] ='laporanmanage';
 $route['laporan/cetak/barang'] ='laporanmanage/doCetakBarang';
 $route['laporan/cetak/barang2'] ='laporanmanage/doCetakBarang2';
 $route['laporan/cetak/masuk'] ='laporanmanage/doCetakMasuk';
-$route['laporan/cetak/tukang'] ='laporanmanage/doCetakTukang';
+$route['laporan/cetak/petugas'] ='laporanmanage/doCetakPetugas';
 
 $route['dashboard'] = 'dashboard';
 $route['hitdashboard'] ='barangmanage';

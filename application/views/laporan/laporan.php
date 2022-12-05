@@ -63,7 +63,9 @@
                                   <li>Transkasi Keluar</li>
                                   <li>Transaksi Perubahan</li>
                                 </ul>
-                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/masuk') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak</a>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/masuk') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak Masuk</a>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/keluar') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak Keluar</a>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/perubahan') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak Perubahan</a>
                               </div>
                             </div>
                           </div>
@@ -79,7 +81,8 @@
                                   <li>Daftar pekerjaan yang dikerjakan</li>
                                   <li>Jumlah barang yg telah dihasilkan</li>
                                 </ul>
-                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/tukang') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak</a>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/petugas') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak Daftar petugas</a>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/petugas') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak perubahan barang</a>
                               </div>
                             </div>
                           </div>

@@ -210,42 +210,21 @@ class LaporanManage extends CI_Controller {
         $data['jenisbarang'] = $JENISBARANG; 
         $this->load->view('laporan/cetakhtml', $data);
 	}
-	
-
-    public function doCetakMasuk(){
-    
-        $tableFilesMasuk = "list_masuk_for_pdf.txt";
-        
-        /**
-         * Generate File For Table
-         */
-        $masuk = $this->m_masuk->ambil_data()->result(); 
-        $tableHeader = array_keys(get_object_vars($masuk[0]));
-        
-        $masuk_json = json_decode(json_encode($masuk), true);
-        
-        $this->generateFileForTable($tableFilesMasuk, $tableHeader, $masuk_json);
-        
-    
-        /**
-         * show file pdf
-         */
-        $pdf = new PDF();
-        $pdf->title = "Masuk";
-        $pdf->AliasNbPages();
-        $pdf->AddPage();
-        $pdf->SetFont('Times','',12);
-        $pdf->Cell(0,10,'Daftar Barang Masuk ',0,1);
-        // for($i=1;$i<=40;$i++)
-        //     $pdf->Cell(0,10,'Printing line number '.$i,0,1);
-        
-        // $tableHeader = array('Country', 'Capital', 'Area (sq km)', 'Pop. (thousands)', "some");
-        // Data loading
-        $data = $pdf->LoadData(__DIR__.'/../../files/generated/'.$tableFilesMasuk);
-    
-        // $pdf->AddPage();
-        $pdf->FancyTable($tableHeader,$data);
-        $pdf->Output();
-        }
-        
+	public function doCetakMasuk(){
+        global $id_suplier;
+        $data['masuk'] = $this->m_masuk->ambil_data()->result(); 
+        $data['id_suplier'] = $id_suplier; 
+        $this->load->view('laporan/cetakmasuk', $data);
+        $query = "
+        SELECT k.id AS 'id masuk', p.id AS 'id suplier', p.nama AS 'nama suplier', p.nama AS 'nama perusahaan', b.nama, b.satuan, b.jenis, kd.harga, kd.jumlah,k.tanggal FROM masuk k INNER JOIN penyuplai p INNER JOIN masuk_detail kd INNER JOIN barang b ON K.id_suplier = p.id;
+        ";
+        $info['lasttrx'] = $this->db->query($query)->result();
+        $this->load->view('laporan/cetakmasuk', $data);
+	}
+    public function doCetakPetugas(){
+        global $id;
+        $data['petugas'] = $this->m_petugas->ambil_data()->result(); 
+        $data['id'] = $id; 
+        $this->load->view('laporan/cetakpetugas', $data);
+	}
 }
