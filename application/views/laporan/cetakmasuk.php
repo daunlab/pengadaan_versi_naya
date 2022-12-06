@@ -37,10 +37,11 @@
         
           <thead class='text-center'>
             <tr>
-              <td>id masuk</td>
-              <td>id suplier</td>
-              <td>nama suplier</td>
-              <td>nama</td>
+              <td>id_masuk</td>
+              <td>id_suplier</td>
+              <td>nama_suplier</td>
+              <td>nama_perusahaan</td>
+              <td>nama </td>
               <td>satuan</td>
               <td>jenis</td>
               <td>harga</td>
@@ -51,21 +52,20 @@
           <tbody class='text-center'>
           
             <?php
-                 foreach ($masuk as $k => $v) {
-                # code...
-                $content = "";
-                $content = "<tr>";
-                $content .= "<td>".$v->id."</td>";
-                $content .= "<td>".$v->id."</td>";
-                $content .= "<td>".$v->nama."</td>";
-                $content .= "<td>".$v->nama."</td>";
-                $content .= "<td>".$v->satuan."</td>";
-                $content .= "<td>".$v->jenis."</td>";
-                $content .= "<td>".$v->harga."</td>";
-                $content .= "<td>".$v->tanggal."</td>";
-                $content .= "</tr>";
+                 
+                 foreach ($masuk as $row)
                 
-                echo "$content";
+                 {
+                 $row ['id_masuk'];
+                 $row ['id_suplier'];
+                 $row ['nama_suplier'];
+                 $row ['nama_perusahaan'];
+                 $row ['nama'];
+                 $row ['satuan'];
+                 $row ['jenis'];
+                 $row ['harga'];
+                 $row ['tanggal'];
+                 
               }
             
             ?>
@@ -74,10 +74,11 @@
           
           <tfooter>
             <tr>
-              <td class='text-center'>id masuk</td>
-              <td class='text-center'>id suplier</td>
-              <td class='text-center'>nama suplier</td>
-              <td class='text-center'>nama</td>
+              <td class='text-center'>id_masuk</td>
+              <td class='text-center'>id_suplier</td>
+              <td class='text-center'>nama_suplier</td>
+              <td class='text-center'>nama_perusahaan</td>
+              <td class='text-center'>nama </td>
               <td class='text-center'>satuan</td>
               <td class='text-center'>jenis</td>
               <td class='text-center'>harga</td>

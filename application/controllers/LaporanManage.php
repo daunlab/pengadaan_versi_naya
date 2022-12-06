@@ -211,14 +211,14 @@ class LaporanManage extends CI_Controller {
         $this->load->view('laporan/cetakhtml', $data);
 	}
 	public function doCetakMasuk(){
-        global $id_suplier;
+        global $id_masuk;
         $data['masuk'] = $this->m_masuk->ambil_data()->result(); 
-        $data['id_suplier'] = $id_suplier; 
+        $data['id_masuk'] = $id_masuk; 
         $this->load->view('laporan/cetakmasuk', $data);
         $query = "
-        SELECT k.id AS 'id masuk', p.id AS 'id suplier', p.nama AS 'nama suplier', p.nama AS 'nama perusahaan', b.nama, b.satuan, b.jenis, kd.harga, kd.jumlah,k.tanggal FROM masuk k INNER JOIN penyuplai p INNER JOIN masuk_detail kd INNER JOIN barang b ON K.id_suplier = p.id;
+        SELECT k.id AS'id_masuk',p.id AS'id_suplier',p.nama AS'nama_suplier',p.nama AS'nama_perusahaan',b.nama,b.satuan,b.jenis,kd.harga,kd.jumlah,k.tanggal FROM masuk k INNER JOIN penyuplai p INNER JOIN masuk_detail kd INNER JOIN barang b ON K.id_suplier = p.id;
         ";
-        $info['lasttrx'] = $this->db->query($query)->result();
+        
         $this->load->view('laporan/cetakmasuk', $data);
 	}
     public function doCetakPetugas(){
