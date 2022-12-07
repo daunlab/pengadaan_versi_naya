@@ -52,19 +52,23 @@
           <tbody class='text-center'>
           
             <?php
-                 
-                 foreach ($masuk as $row)
+                //  var_dump($trx);
+                 foreach ($trx as $row)
                 
                  {
-                 $row ['id_masuk'];
-                 $row ['id_suplier'];
-                 $row ['nama_suplier'];
-                 $row ['nama_perusahaan'];
-                 $row ['nama'];
-                 $row ['satuan'];
-                 $row ['jenis'];
-                 $row ['harga'];
-                 $row ['tanggal'];
+                  $html= "";
+                  $html.= "<tr>";
+                $html .= "<td>".$row->id_masuk."</td>";
+                $html .= "<td>".$row->id_suplier."</td>";
+                $html .= "<td>".$row->nama_suplier."</td>";
+                $html .= "<td>".$row->nama_perusahaan."</td>";
+                $html .= "<td>".$row->nama."</td>";
+                $html .= "<td>".$row->satuan."</td>";
+                $html .= "<td>".$row->jenis."</td>";
+                $html .= "<td>".$row->harga."</td>";
+                $html .= "<td>".$row->tanggal."</td>";
+                $html.= "</tr>";
+                echo $html;
                  
               }
             

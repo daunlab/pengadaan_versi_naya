@@ -133,6 +133,7 @@ class LaporanManage extends CI_Controller {
 		$this->load->model('m_barang');
 		$this->load->model('m_masuk');
 		$this->load->model('m_keluar');
+		$this->load->model('m_petugas');
 	}
 
 	public function index()
@@ -212,13 +213,13 @@ class LaporanManage extends CI_Controller {
 	}
 	public function doCetakMasuk(){
         global $id_masuk;
-        $data['masuk'] = $this->m_masuk->ambil_data()->result(); 
+        $data['masuk'] = $this->m_masuk->ambil_data()->result(); /** INI DIPAKE ATAU TIDAK? */
         $data['id_masuk'] = $id_masuk; 
-        $this->load->view('laporan/cetakmasuk', $data);
+        // $this->load->view('laporan/cetakmasuk', $data); /** LOAD 2 KALI utk APA ? jika tak dibutuhkan hapus saja */
         $query = "
         SELECT k.id AS'id_masuk',p.id AS'id_suplier',p.nama AS'nama_suplier',p.nama AS'nama_perusahaan',b.nama,b.satuan,b.jenis,kd.harga,kd.jumlah,k.tanggal FROM masuk k INNER JOIN penyuplai p INNER JOIN masuk_detail kd INNER JOIN barang b ON K.id_suplier = p.id;
         ";
-        
+        $data['trx'] = $this->db->query($query)->result();        
         $this->load->view('laporan/cetakmasuk', $data);
 	}
     public function doCetakPetugas(){
