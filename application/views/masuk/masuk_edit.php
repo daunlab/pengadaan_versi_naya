@@ -29,7 +29,7 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Transaksi Barang Masuk</h1>
+                        <h1 class="mt-4">Edit Barang Masuk</h1>
                     </div>
                     
                     <div class="card-body">

@@ -50,10 +50,10 @@
           <tbody class='text-center'>
           
             <?php
-                var_dump($petugas);
+             
               foreach ($petugas as $k => $v) {
                 
-                var_dump($petugas);
+           
                 # code...
                 $content = "";
                 $content = "<tr>";

@@ -84,7 +84,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: #f9fafb;
   text-align: var(--bs-body-text-align);
-  background-color: #6c3f1c;
+  background-color: #97824e;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -2192,7 +2192,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #ffffff;
-  background-color: #837c5f;
+  background-color:  #48503e;
   background-clip: padding-box;
   border: 1px solid #f9fafb;
   -webkit-appearance: none;
@@ -2407,7 +2407,7 @@ textarea.form-control-lg {
   font-weight: 400;
   line-height: 1.5;
   color: #f9fafb;
-  background-color: #837c5f;
+  background-color:  #48503e;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
@@ -4523,7 +4523,7 @@ textarea.form-control-lg {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #2a251b;
+    background-color: #1c160d;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
@@ -7784,7 +7784,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #ffffff  !important;
 }
 
 .text-black-50 {
@@ -7819,7 +7819,7 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-  background-image: url('../../assets/assets/img/interior6.png');
+  background-image: url('../../assets/assets/img/8.jpg');
 }
 
 .bg-secondary {
@@ -7848,10 +7848,10 @@ textarea.form-control-lg {
 }
 
 .bg-light {
-    background-color: #0c0805;
+  background-color: #0c0805;
 }
 .bg-dark {
-  background-image: url('../../assets/assets/img/interior7.jpg');
+  background-color: #ffa000;
 }
 .bg-black {
   --bs-bg-opacity: 1;
@@ -11450,6 +11450,7 @@ body {
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
+
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link {
   display: flex;

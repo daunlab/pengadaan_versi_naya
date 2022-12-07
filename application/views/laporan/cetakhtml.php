@@ -44,6 +44,7 @@
               <td>satuan</td>
               <td>jenis</td>
               <td>harga</td>
+              <td>stok</td>
             </tr>
           </thead>
           
@@ -60,6 +61,7 @@
                 $content .= "<td>".$v->satuan."</td>";
                 $content .= "<td>".$jenisbarang[$v->jenis]."</td>";
                 $content .= "<td>".$v->harga."</td>";
+                $content .= "<td>".$v->stok."</td>";
                 $content .= "</tr>";
                 
                 echo "$content";
@@ -76,6 +78,8 @@
               <td class='text-center'>satuan</td>
               <td class='text-center'>jenis</td>
               <td class='text-center'>harga</td>
+              <td class='text-center'>stok</td>
+
             </tr>
           </tfooter>
         </table>

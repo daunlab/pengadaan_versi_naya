@@ -43,11 +43,9 @@
                               <div class="card-body">
                                 <h1 class="card-title pricing-card-title">Barang<small class="text-muted fw-light">/barang</small></h1>
                                 <ul class="list-unstyled mt-3 mb-4">
-                                  <li>detail info barang</li>
-                                  <li>nama barang</li>
-                                  <li>stok barang</li>
+                                  <li>detail info daftar barang</li>
                                 </ul>
-                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/barang2') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak</a>
+                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/barang2') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak daftar barang</a>
                               </div>
                             </div>
                           </div>
@@ -70,19 +68,17 @@
                             </div>
                           </div>
                           <div class="col">
-                            <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                              <div class="card-header py-3 text-white bg-primary border-primary">
+                          <div class="card mb-4 rounded-3 shadow-sm">
+                              <div class="card-header py-3">
                                 <h4 class="my-0 fw-normal">Pekerja</h4>
                               </div>
                               <div class="card-body">
-                                <h1 class="card-title pricing-card-title">Pekerja<small class="text-muted fw-light" style="font-size:15pt;">/petugas, pekerjaan petugas</small></h1>
+                                <h1 class="card-title pricing-card-title">Pekerja<small class="text-muted fw-light" style="font-size:15pt;">/petugas</small></h1>
                                 <ul class="list-unstyled mt-3 mb-4">
                                   <li>Daftar Pekerja</li>
-                                  <li>Daftar pekerjaan yang dikerjakan</li>
-                                  <li>Jumlah barang yg telah dihasilkan</li>
                                 </ul>
                                 <a target='_blank' href="<?= base_url('index.php/laporan/cetak/petugas') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak Daftar pekerja</a>
-                                <a target='_blank' href="<?= base_url('index.php/laporan/cetak/petugas') ?>" class="w-100 btn btn-lg btn-outline-primary">Cetak jumlah barang yang dihasilkan</a>
+                               
                               </div>
                             </div>
                           </div>

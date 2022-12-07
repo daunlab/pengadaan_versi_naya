@@ -29,7 +29,7 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tambah</h1>
+                        <h1 class="mt-4">Tambah Suplier</h1>
                     </div>
                     
                     <div class="card-body">
@@ -59,12 +59,12 @@
                             </div>
                             <div class="form-group">
                               <label for="exampleFormControlTextarea1">Alamat</label>
-                              <textarea class="form-control" id="inputHargaBarang" name="alamat" type="text" placeholder="Input Alamat"></textarea>
+                              <textarea class="form-control" id="inputHargaBarang" name="alamat" type="text" placeholder=""></textarea>
                             </div>
                             
                             <div class="form-group">
                               <label for="exampleFormControlTextarea1">Kontak</label>
-                              <textarea class="form-control" id="inputHargaBarang" name="kontak" type="text" placeholder="Input Kontak"></textarea>
+                              <textarea class="form-control" id="inputHargaBarang" name="kontak" type="text" placeholder=""></textarea>
                             </div>
                             <div class="mt-4 mb-0">
                                 <div class="d-grid">

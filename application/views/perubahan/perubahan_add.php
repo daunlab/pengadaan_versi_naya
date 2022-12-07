@@ -34,7 +34,7 @@
                     
                     <!-- the content -->
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Transaksi Perubahan Barang</h1>
+                        <h1 class="mt-4">Tambah Perubahan Barang</h1>
                     </div>
                     
                     <div class="card-body">

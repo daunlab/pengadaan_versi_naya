@@ -23,8 +23,8 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
-        <section class="vh-80" style="background-image: url('../11.jpg)">
-  <div class="container py-5 h-100">
+    <section class="vh-80" style="background-image: url('../8.jpg')">
+    <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
         <div class="card" style ="border-radius: 0rem">

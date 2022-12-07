@@ -133,6 +133,7 @@ class LaporanManage extends CI_Controller {
 		$this->load->model('m_barang');
 		$this->load->model('m_masuk');
 		$this->load->model('m_keluar');
+        $this->load->model('m_petugas');
 	}
 
 	public function index()
@@ -218,7 +219,7 @@ class LaporanManage extends CI_Controller {
         $query = "
         SELECT k.id AS'id_masuk',p.id AS'id_suplier',p.nama AS'nama_suplier',p.nama AS'nama_perusahaan',b.nama,b.satuan,b.jenis,kd.harga,kd.jumlah,k.tanggal FROM masuk k INNER JOIN penyuplai p INNER JOIN masuk_detail kd INNER JOIN barang b ON K.id_suplier = p.id;
         ";
-        
+        $info['lasttrx'] = $this->db->query($query)->result();
         $this->load->view('laporan/cetakmasuk', $data);
 	}
     public function doCetakPetugas(){
