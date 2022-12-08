@@ -53,25 +53,25 @@
           
           <tbody class='text-center'>
           
-            <?php     
-               var_dump($lasttrx);
-              foreach ($masuk as  $k => $v) {  
-              var_dump($lasttrxS);
-                # code...
-                $content = "";
-                $content = "<tr>";
-                $content .= "<td>".$v->id_masuk."</td>";
-                $content .= "<td>".$v->id_suplier."</td>";
-                $content .= "<td>".$v->nama_suplier."</td>";
-                $content .= "<td>".$v->nama_perusahaan."</td>";
-                $content .= "<td>".$v->nama."</td>";
-                $content .= "<td>".$v->satuan."</td>";
-                $content .= "<td>".$v->jenis."</td>";
-                $content .= "<td>".$v->harga."</td>";
-                $content .= "<td>".$v->tanggal."</td>";
-                $content .= "</tr>";
+            <?php
+                //  var_dump($trx);
+                 foreach ($trx as $row)
                 
-                echo "$content";
+                 {
+                  $html= "";
+                  $html.= "<tr>";
+                $html .= "<td>".$row->id_masuk."</td>";
+                $html .= "<td>".$row->id_suplier."</td>";
+                $html .= "<td>".$row->nama_suplier."</td>";
+                $html .= "<td>".$row->nama_perusahaan."</td>";
+                $html .= "<td>".$row->nama."</td>";
+                $html .= "<td>".$row->satuan."</td>";
+                $html .= "<td>".$row->jenis."</td>";
+                $html .= "<td>".$row->harga."</td>";
+                $html .= "<td>".$row->tanggal."</td>";
+                $html.= "</tr>";
+                echo $html;
+                 
               }
               
             
